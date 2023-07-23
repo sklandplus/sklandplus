@@ -46,7 +46,7 @@ async function main() {
     'https://petstore.swagger.io/v2/swagger.json',
     './openapi.json',
   )
-  await fs.writeFile('./dist/index.html', swaggerInitializer)
+  await fs.writeFile('./dist/swagger-initializer.js', swaggerInitializer)
 }
 
 main()
