@@ -1,33 +1,33 @@
-# Welcome to the SklandPlus project contributing guide!
+# 欢迎阅读 SklandPlus 项目的贡献指南！
 
-We are very happy that you are interested in contributing to SklandPlus. Before submitting your contribution though, please make sure to take a moment and read through the following guidelines.
+我们非常高兴您对贡献 SklandPlus 感兴趣。但在提交您的贡献之前，请花一点时间阅读以下准则。
 
-## Code of Conduct
+## 行为准则
 
-This project and everyone participating in it is governed by the [SklandPlus Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [report@skland.plus](mailto:report@skland.plus).
+本项目及其中的所有 Contributor 都受到 [SklandPlus 行为准则](./CODE_OF_CONDUCT.md) 的约束。通过参与，您有责任维护这一准则。请将不可接受的行为报告给 [report@skland.plus](mailto:report@skland.plus)。
 
-## Contributing
+## 如何贡献
 
-### Issues
+### 问题反馈
 
-Issues are always welcome. Please follow the issue template when opening a new issue (if applicable), and make sure to provide as much information as possible.
+我们始终欢迎您提交问题。在开启新的问题反馈时，请遵循问题模板（如适用），并尽可能提供尽可能多的信息。
 
-### Pull Requests
+### Pull Request
 
-Pull requests are also welcome. Please follow the pull request template when opening a new pull request (if applicable), and make sure to provide as much information as possible as well.
+我们同样欢迎您提交 Pull Request。在开启新的 Pull Request 时，请遵循 Pull Request 模板（如适用），并也尽可能提供尽可能多的信息。
 
-### Commit Messages
+### 提交信息
 
-Please follow the [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) specification when writing commit messages. This is currently not enforced, but it is highly recommended.
+提交信息时，请遵循 [Conventional Commits](https://www.conventionalcommits.org/zh/v1.0.0/) 的规范。虽然目前暂未强制执行，但我们强烈推荐这么做。
 
-### Code Style
+### 代码风格
 
-This project formats code using [Prettier](https://prettier.io/). Please make sure to run `yarn format` before submitting a pull request.
+本项目使用 [Prettier](https://prettier.io/) 格式化代码。在提交 Pull Request 前，请确保运行 `yarn format`。
 
-### License
+### 许可证
 
-By contributing to this project, you agree that your contributions will be licensed under the terms of the [MIT license](./LICENSE).
+在为本项目作出贡献时，您同意您的贡献将根据 [MIT 许可证](./LICENSE) 的条款进行许可。
 
-## Thanks
+## 感谢
 
-Thanks to all the people who have already contributed to SklandPlus!
+感谢所有已经对 SklandPlus 作出贡献的开发者们！
