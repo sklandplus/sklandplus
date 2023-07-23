@@ -5,6 +5,7 @@
   "compilerOptions": {
     "resolveJsonModule": true,
     // resolve .d.ts files from src
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "outDir": "dist"
   }
 }

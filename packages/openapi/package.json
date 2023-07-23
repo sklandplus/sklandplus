@@ -13,6 +13,7 @@
   ],
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
+    "build": "esno build.ts",
     "dev": "nodemon --watch src --ext ts,json --exec \"yarn esno dev.ts\""
   },
   "devDependencies": {
