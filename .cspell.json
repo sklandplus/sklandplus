@@ -1,0 +1,35 @@
+{
+  "version": "0.2",
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/master/cspell.schema.json",
+  "language": "en",
+  "words": [
+    "amiya",
+    "bili",
+    "bilibili",
+    "BVID",
+    "commitlint",
+    "dependabot",
+    "editorconfig",
+    "esnext",
+    "hypergryph",
+    "libauth",
+    "mkdir",
+    "openapi",
+    "prettierignore",
+    "skland",
+    "sklandplus",
+    "transpiled",
+    "Turborepo",
+    "typedoc",
+    "unfetch",
+    "untracked"
+  ],
+  "flagWords": [],
+  "ignorePaths": [
+    "package.json",
+    "package-lock.json",
+    "yarn.lock",
+    "tsconfig.json",
+    "node_modules/**"
+  ]
+}
