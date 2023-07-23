@@ -8,8 +8,8 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `packages/openapi`: A handcrafted OpenAPI 3 schema for Skland API, exported in both JSON and YAML formats.
-- `packages/client`: A TypeScript client based on `unfetch` for the Skland API.
+- [`packages/openapi`](https://github.com/sklandplus/sklandplus/tree/main/packages/openapi) ([`@sklandplus/openapi`](https://www.npmjs.com/package/@sklandplus/openapi)): A handcrafted OpenAPI 3 schema for Skland API, exported in both JSON and YAML formats.
+- [`packages/client`](https://github.com/sklandplus/sklandplus/tree/main/packages/client) ([`@sklandplus/client`](https://www.npmjs.com/package/@sklandplus/client)): A ready-to-use type-safe client, automatically generated from `@sklandplus/openapi` using [`openapi-typescript`](https://github.com/drwpow/openapi-typescript).
 
 Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
 
