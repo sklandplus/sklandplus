@@ -1,5 +1,5 @@
 import { OpenApiBuilder } from 'openapi3-ts/oas31'
-import { createDefaultRegistry } from 'renderer/schema'
+import { createDefaultRegistry } from './schema'
 import { SharedParams } from './sharedParams'
 
 export const renderDocument = async () => {

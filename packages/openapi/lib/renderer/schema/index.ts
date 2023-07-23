@@ -1,4 +1,4 @@
-import { SchemaRegistry } from 'renderer/schema/registry'
+import { SchemaRegistry } from './registry'
 
 import GetGamePlayerBindingResponse from './schemas/GetGamePlayerBindingResponse.json'
 import GetGamePlayerInfoResponse from './schemas/GetGamePlayerInfoResponse.json'

@@ -4,8 +4,8 @@
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "resolveJsonModule": true,
-    // resolve .d.ts files from src
-    "baseUrl": "src",
-    "outDir": "dist"
+    "target": "es2017",
+    "baseUrl": "lib",
+    "outDir": "build/main"
   }
 }
