@@ -1,4 +1,6 @@
 import refParser from '@apidevtools/json-schema-ref-parser'
+
+// @ts-ignore
 import toOpenApi from 'json-schema-to-openapi-schema'
 import { OpenApiBuilder } from 'openapi3-ts/oas31'
 
