@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "code": {
+      "type": "integer",
+      "examples": [0]
+    },
+    "message": {
+      "type": "string",
+      "examples": ["OK"]
+    },
+    "data": {
+      "$ref": "#/definitions/Data"
+    }
+  },
+  "required": ["code", "data", "message"],
+  "definitions": {
+    "Data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/List"
+          }
+        }
+      },
+      "required": ["list"],
+      "title": "Data"
+    },
+    "List": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "appCode": {
+          "type": "string",
+          "examples": ["arknights"]
+        },
+        "appName": {
+          "type": "string",
+          "examples": ["明日方舟"]
+        },
+        "bindingList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BindingList"
+          }
+        }
+      },
+      "required": ["appCode", "appName", "bindingList"],
+      "title": "List"
+    },
+    "BindingList": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "uid": {
+          "type": "string",
+          "format": "integer",
+          "examples": ["10000001"]
+        },
+        "isOfficial": {
+          "type": "boolean",
+          "examples": [true]
+        },
+        "isDefault": {
+          "type": "boolean",
+          "examples": [true]
+        },
+        "channelMasterId": {
+          "type": "string",
+          "format": "integer",
+          "examples": ["1"]
+        },
+        "channelName": {
+          "type": "string",
+          "examples": ["官服"]
+        },
+        "nickName": {
+          "type": "string",
+          "examples": ["Amiya#1234"]
+        },
+        "isDelete": {
+          "type": "boolean",
+          "examples": [false]
+        }
+      },
+      "required": [
+        "channelMasterId",
+        "channelName",
+        "isDefault",
+        "isDelete",
+        "isOfficial",
+        "nickName",
+        "uid"
+      ],
+      "title": "BindingList"
+    }
+  }
+}

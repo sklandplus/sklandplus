@@ -1,0 +1,10 @@
+{
+  "extends": "tsconfig/base.json",
+  "include": [".", "**/*.d.ts"],
+  "exclude": ["dist", "build", "node_modules"],
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    // resolve .d.ts files from src
+    "baseUrl": "src"
+  }
+}

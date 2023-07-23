@@ -1,0 +1,1872 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "message": {
+      "type": "string"
+    },
+    "data": {
+      "$ref": "#/definitions/Data"
+    }
+  },
+  "required": ["code", "data", "message"],
+  "title": "getGamePlayerInfo_Response",
+  "definitions": {
+    "Data": {
+      "type": "object",
+      "properties": {
+        "currentTs": {
+          "type": "integer",
+          "description": "Timestamp in seconds",
+          "examples": [1554105600]
+        },
+        "showConfig": {
+          "$ref": "#/definitions/ShowConfig"
+        },
+        "status": {
+          "$ref": "#/definitions/Status"
+        },
+        "medal": {
+          "$ref": "#/definitions/Medal"
+        },
+        "assistChars": {
+          "type": "array",
+          "description": "User's assistant operators/support unit (助战干员) configuration.",
+          "items": {
+            "$ref": "#/definitions/AssistChar"
+          }
+        },
+        "chars": {
+          "type": "array",
+          "description": "List of operators (干员) the user owns.",
+          "items": {
+            "$ref": "#/definitions/DataChar"
+          }
+        },
+        "skins": {
+          "type": "array",
+          "description": "List of skins (干员服装) the user owns.",
+          "items": {
+            "$ref": "#/definitions/Skin"
+          }
+        },
+        "building": {
+          "$ref": "#/definitions/Building"
+        },
+        "recruit": {
+          "type": "array",
+          "description": "User's current recruit (公开招募) status.",
+          "items": {
+            "$ref": "#/definitions/Recruit"
+          }
+        },
+        "campaign": {
+          "$ref": "#/definitions/Campaign"
+        },
+        "tower": {
+          "$ref": "#/definitions/Tower"
+        },
+        "rogue": {
+          "$ref": "#/definitions/Rogue"
+        },
+        "routine": {
+          "$ref": "#/definitions/Routine"
+        },
+        "activity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Activity"
+          }
+        },
+        "charInfoMap": {
+          "$ref": "#/definitions/CharInfoMap"
+        },
+        "skinInfoMap": {
+          "$ref": "#/definitions/SkinInfoMap"
+        },
+        "stageInfoMap": {
+          "$ref": "#/definitions/StageInfoMap"
+        },
+        "activityInfoMap": {
+          "$ref": "#/definitions/ActivityInfoMap"
+        },
+        "zoneInfoMap": {
+          "$ref": "#/definitions/CampaignZoneInfoMap"
+        },
+        "towerInfoMap": {
+          "$ref": "#/definitions/TowerInfoMap"
+        },
+        "rogueInfoMap": {
+          "$ref": "#/definitions/RogueInfoMap"
+        },
+        "campaignInfoMap": {
+          "$ref": "#/definitions/CampaignInfoMap"
+        },
+        "medalInfoMap": {
+          "$ref": "#/definitions/MedalInfoMap"
+        },
+        "campaignZoneInfoMap": {
+          "$ref": "#/definitions/CampaignZoneInfoMap"
+        },
+        "equipmentInfoMap": {
+          "$ref": "#/definitions/EquipmentInfoMap"
+        },
+        "manufactureFormulaInfoMap": {
+          "$ref": "#/definitions/ManufactureFormulaInfoMap"
+        },
+        "charAssets": {
+          "type": "array",
+          "items": {}
+        },
+        "skinAssets": {
+          "type": "array",
+          "items": {}
+        }
+      },
+      "required": [
+        "activity",
+        "activityInfoMap",
+        "assistChars",
+        "building",
+        "campaign",
+        "campaignInfoMap",
+        "campaignZoneInfoMap",
+        "charAssets",
+        "charInfoMap",
+        "chars",
+        "currentTs",
+        "equipmentInfoMap",
+        "manufactureFormulaInfoMap",
+        "medal",
+        "medalInfoMap",
+        "recruit",
+        "rogue",
+        "rogueInfoMap",
+        "routine",
+        "showConfig",
+        "skinAssets",
+        "skinInfoMap",
+        "skins",
+        "stageInfoMap",
+        "status",
+        "tower",
+        "towerInfoMap",
+        "zoneInfoMap"
+      ],
+      "title": "Data"
+    },
+    "Activity": {
+      "type": "object",
+      "properties": {
+        "actId": {
+          "type": "string"
+        },
+        "actReplicaId": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "zones": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Zone"
+          }
+        }
+      },
+      "required": ["actId", "actReplicaId", "type", "zones"],
+      "title": "Activity"
+    },
+    "Zone": {
+      "type": "object",
+      "properties": {
+        "zoneId": {
+          "type": "string"
+        },
+        "zoneReplicaId": {
+          "type": "string"
+        },
+        "clearedStage": {
+          "type": "integer"
+        },
+        "totalStage": {
+          "type": "integer"
+        },
+        "stageStatus": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/StageStatus"
+          }
+        }
+      },
+      "required": [
+        "clearedStage",
+        "stageStatus",
+        "totalStage",
+        "zoneId",
+        "zoneReplicaId"
+      ],
+      "title": "Zone"
+    },
+    "StageStatus": {
+      "type": "object",
+      "properties": {
+        "stageId": {
+          "type": "string"
+        },
+        "completed": {
+          "type": "boolean"
+        }
+      },
+      "required": ["completed", "stageId"],
+      "title": "StageStatus"
+    },
+    "ActivityInfoMap": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "startTime": {
+          "type": "integer"
+        },
+        "endTime": {
+          "type": "integer"
+        },
+        "rewardEndTime": {
+          "type": "integer"
+        },
+        "isReplicate": {
+          "type": "boolean"
+        },
+        "type": {
+          "$ref": "#/definitions/ActivityInfoMapType"
+        }
+      },
+      "required": [
+        "endTime",
+        "id",
+        "isReplicate",
+        "name",
+        "rewardEndTime",
+        "startTime",
+        "type"
+      ],
+      "title": "ActivityInfoMap"
+    },
+    "AssistChar": {
+      "type": "object",
+      "properties": {
+        "charId": {
+          "type": "string",
+          "description": "In-game Operator (干员) ID.",
+          "examples": ["char_1028_texas2"]
+        },
+        "skinId": {
+          "type": "string",
+          "description": "In-game Skin (干员服装) ID.",
+          "examples": ["char_1028_texas2#2"]
+        },
+        "level": {
+          "type": "integer",
+          "description": "Operator's level (干员等级). Maximum value depends on the rarity of the operator.",
+          "minimum": 1,
+          "maximum": 90
+        },
+        "evolvePhase": {
+          "type": "integer",
+          "description": "Operator's current evolution phase (精英化等级). Maximum value depends on the rarity of the operator.",
+          "enum": [0, 1, 2],
+          "minimum": 0,
+          "maximum": 2
+        },
+        "potentialRank": {
+          "type": "integer",
+          "description": "Operator's potential rank (潜能等级). Maximum value is 6. Initial value is 1 (right after the user acquired the operator).",
+          "enum": [1, 2, 3, 4, 5, 6],
+          "minimum": 1,
+          "maximum": 6
+        },
+        "skillId": {
+          "type": "string",
+          "description": "Operator's current skill (技能) ID that is configured as the assistance skill (助战技能).",
+          "examples": ["skchr_texas2_3"]
+        },
+        "mainSkillLvl": {
+          "type": "integer",
+          "description": "Operator's current skill (技能) level (技能等级). This level does not include the \"specialize\" level (专精等级).",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "specializeLevel": {
+          "type": "integer",
+          "description": "Operator's current skill (技能) specialize level (专精等级).",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "equip": {
+          "description": "Equipment (模组) the operator is currently equipped with. A `null` value means the operator is not equipped with any equipment.",
+          "anyOf": [
+            {
+              "$ref": "#/definitions/Equip"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "charId",
+        "equip",
+        "evolvePhase",
+        "level",
+        "mainSkillLvl",
+        "potentialRank",
+        "skillId",
+        "skinId",
+        "specializeLevel"
+      ],
+      "title": "AssistChar"
+    },
+    "Equip": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "In-game Equipment (模组) ID."
+        },
+        "level": {
+          "type": "integer",
+          "description": "Equipment's level (模组等级).",
+          "minimum": 1,
+          "maximum": 3
+        }
+      },
+      "required": ["id", "level"],
+      "title": "Equip",
+      "description": "Equipment (模组) of an operator."
+    },
+    "Building": {
+      "type": "object",
+      "description": "User's base (基建) status.",
+      "properties": {
+        "tiredChars": {
+          "type": "array",
+          "description": "List of operators (干员) that are currently tired (注意力涣散). TODO: Find out the item types in this array.",
+          "items": {}
+        },
+        "powers": {
+          "type": "array",
+          "description": "Status of the Power Stations (发电站).",
+          "items": {
+            "$ref": "#/definitions/Control"
+          }
+        },
+        "manufactures": {
+          "type": "array",
+          "description": "Status of the Manufacture Stations (制造站).",
+          "items": {
+            "$ref": "#/definitions/Manufacture"
+          }
+        },
+        "tradings": {
+          "type": "array",
+          "description": "Status of the Trading Stations (贸易站).",
+          "items": {
+            "$ref": "#/definitions/Trading"
+          }
+        },
+        "dormitories": {
+          "type": "array",
+          "description": "Status of the Dormitories (宿舍).",
+          "items": {
+            "$ref": "#/definitions/Control"
+          }
+        },
+        "meeting": {
+          "$ref": "#/definitions/Meeting",
+          "description": "Status of the Meeting Room (会客室)."
+        },
+        "hire": {
+          "$ref": "#/definitions/Hire"
+        },
+        "training": {
+          "$ref": "#/definitions/Training"
+        },
+        "labor": {
+          "$ref": "#/definitions/Labor"
+        },
+        "furniture": {
+          "$ref": "#/definitions/Furniture"
+        },
+        "elevators": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Control"
+          }
+        },
+        "corridors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Control"
+          }
+        },
+        "control": {
+          "$ref": "#/definitions/Control"
+        }
+      },
+      "required": [
+        "control",
+        "corridors",
+        "dormitories",
+        "elevators",
+        "furniture",
+        "hire",
+        "labor",
+        "manufactures",
+        "meeting",
+        "powers",
+        "tiredChars",
+        "tradings",
+        "training"
+      ],
+      "title": "Building"
+    },
+    "ControlChar": {
+      "type": "object",
+      "properties": {
+        "charId": {
+          "type": "string",
+          "description": "In-game Operator (干员) ID.",
+          "examples": ["char_1028_texas2"]
+        },
+        "ap": {
+          "type": "integer",
+          "description": "Operator's current AP (注意力).",
+          "minimum": 0,
+          "maximum": 8640000
+        },
+        "lastApAddTime": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) when the operator's AP (注意力) was last added."
+        },
+        "index": {
+          "type": "integer",
+          "description": "Operator's index (位置). 0 means the operator is located at the left-most operator slot within the game.",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "bubble": {
+          "$ref": "#/definitions/Bubble"
+        },
+        "workTime": {
+          "type": "integer",
+          "description": "Operator's current work time (工作时间) in minutes (分钟)."
+        }
+      },
+      "required": [
+        "ap",
+        "bubble",
+        "charId",
+        "index",
+        "lastApAddTime",
+        "workTime"
+      ],
+      "title": "ControlChar"
+    },
+    "Bubble": {
+      "type": "object",
+      "properties": {
+        "normal": {
+          "$ref": "#/definitions/Assist"
+        },
+        "assist": {
+          "$ref": "#/definitions/Assist"
+        }
+      },
+      "required": ["assist", "normal"],
+      "description": "Operator (干员) bubble (信赖收取气泡) status.",
+      "title": "Bubble"
+    },
+    "Assist": {
+      "type": "object",
+      "properties": {
+        "add": {
+          "type": "integer"
+        },
+        "ts": {
+          "type": "integer"
+        }
+      },
+      "required": ["add", "ts"],
+      "title": "Assist"
+    },
+    "Control": {
+      "type": "object",
+      "properties": {
+        "slotId": {
+          "type": "string",
+          "description": "In-game building slot (基建设施建造位) ID.",
+          "examples": ["slot_26"]
+        },
+        "slotState": {
+          "type": "integer"
+        },
+        "level": {
+          "type": "integer",
+          "description": "Building's level (基建设施等级). Regular buildings can be upgraded up to level 3. Dormitories (宿舍) can be upgraded up to level 5.",
+          "minimum": 1,
+          "maximum": 5
+        },
+        "chars": {
+          "type": "array",
+          "description": "List of operators (干员) that are currently located (进驻) in the building.",
+          "items": {
+            "$ref": "#/definitions/ControlChar"
+          }
+        },
+        "comfort": {
+          "type": "integer",
+          "description": "Building's comfort (舒适度). Only exists in dormitories (宿舍).",
+          "minimum": 0,
+          "maximum": 5000
+        }
+      },
+      "required": ["level", "slotId"],
+      "title": "Control"
+    },
+    "Furniture": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "type": "integer"
+        }
+      },
+      "required": ["total"],
+      "title": "Furniture"
+    },
+    "Hire": {
+      "type": "object",
+      "properties": {
+        "slotId": {
+          "type": "string"
+        },
+        "level": {
+          "type": "integer"
+        },
+        "chars": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ControlChar"
+          }
+        },
+        "state": {
+          "type": "integer"
+        },
+        "refreshCount": {
+          "type": "integer"
+        },
+        "completeWorkTime": {
+          "type": "integer"
+        },
+        "slotState": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "chars",
+        "completeWorkTime",
+        "level",
+        "refreshCount",
+        "slotId",
+        "slotState",
+        "state"
+      ],
+      "title": "Hire"
+    },
+    "Labor": {
+      "type": "object",
+      "properties": {
+        "maxValue": {
+          "type": "integer"
+        },
+        "value": {
+          "type": "integer"
+        },
+        "lastUpdateTime": {
+          "type": "integer"
+        },
+        "remainSecs": {
+          "type": "integer"
+        }
+      },
+      "required": ["lastUpdateTime", "maxValue", "remainSecs", "value"],
+      "title": "Labor"
+    },
+    "Manufacture": {
+      "type": "object",
+      "properties": {
+        "slotId": {
+          "type": "string",
+          "description": "In-game building slot (基建设施建造位) ID.",
+          "examples": ["slot_1"]
+        },
+        "level": {
+          "type": "integer",
+          "description": "Building's level (基建设施等级).",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "chars": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ControlChar"
+          }
+        },
+        "completeWorkTime": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) when the manufacture (制造站) will complete its current manufacture.",
+          "examples": [1554105600]
+        },
+        "lastUpdateTime": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) when the manufacture (制造站) was last updated. TODO: Find out what this timestamp is used for.",
+          "examples": [1554105600]
+        },
+        "formulaId": {
+          "type": "string",
+          "format": "integer",
+          "description": "In-game manufacture formula (制造配方) ID.",
+          "examples": ["3"]
+        },
+        "capacity": {
+          "type": "integer",
+          "description": "Manufacture's capacity (容量)."
+        },
+        "weight": {
+          "type": "integer",
+          "description": "Manufacture's weight (负载)? TODO: Find out what this value is used for.",
+          "examples": [0]
+        },
+        "complete": {
+          "type": "integer",
+          "description": "Manufacture's complete (完成) status? TODO: Find out what this value is used for.",
+          "examples": [0]
+        },
+        "remain": {
+          "type": "integer",
+          "description": "Manufacture's remain (剩余) status? TODO: Find out what this value is used for.",
+          "examples": [99]
+        },
+        "speed": {
+          "type": "number",
+          "description": "Manufacture's speed (速度) multiplier.",
+          "minimum": 0,
+          "maximum": 2
+        }
+      },
+      "required": [
+        "capacity",
+        "chars",
+        "complete",
+        "completeWorkTime",
+        "formulaId",
+        "lastUpdateTime",
+        "level",
+        "remain",
+        "slotId",
+        "speed",
+        "weight"
+      ],
+      "title": "Manufacture"
+    },
+    "Meeting": {
+      "type": "object",
+      "properties": {
+        "slotId": {
+          "type": "string",
+          "description": "In-game building slot (基建设施建造位) ID.",
+          "examples": ["slot_1"]
+        },
+        "level": {
+          "type": "integer",
+          "description": "Building's level (基建设施等级).",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "chars": {
+          "type": "array",
+          "description": "List of operators (干员) that are currently located (进驻) in the building.",
+          "items": {
+            "$ref": "#/definitions/ControlChar"
+          }
+        },
+        "clue": {
+          "$ref": "#/definitions/Clue"
+        },
+        "lastUpdateTime": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) when the meeting (会客室) was last updated. TODO: Find out what this timestamp is used for.",
+          "examples": [1554105600]
+        },
+        "completeWorkTime": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) when the operators (干员) in the meeting (会客室) will become tired (注意力涣散).",
+          "examples": [1554105600]
+        }
+      },
+      "required": [
+        "chars",
+        "clue",
+        "completeWorkTime",
+        "lastUpdateTime",
+        "level",
+        "slotId"
+      ],
+      "title": "Meeting"
+    },
+    "Clue": {
+      "type": "object",
+      "description": "Clue (线索) status.",
+      "properties": {
+        "own": {
+          "type": "integer",
+          "description": "Amount of clues (线索) the user currently owns."
+        },
+        "received": {
+          "type": "integer",
+          "description": "Amount of clues (线索) the user has received."
+        },
+        "dailyReward": {
+          "type": "boolean",
+          "description": "Whether the user has received the daily clue (线索) reward."
+        },
+        "needReceive": {
+          "type": "integer",
+          "description": "Amount of clues (线索) that is available for the user to be received."
+        },
+        "board": {
+          "type": "array",
+          "description": "List of clues (线索) the user currently has on the board (线索槽). TODO: add more types.",
+          "items": {
+            "type": "string",
+            "enum": ["RHINE", "PENGUIN", "BLACKSTEEL", "RHODES", "GLASGOW"]
+          }
+        },
+        "sharing": {
+          "type": "boolean",
+          "description": "Whether the user is currently in sharing (线索交流开启中) status.",
+          "examples": [false]
+        },
+        "shareCompleteTime": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) when the sharing (线索交流) will complete.",
+          "examples": [1554105600]
+        }
+      },
+      "required": [
+        "board",
+        "dailyReward",
+        "needReceive",
+        "own",
+        "received",
+        "shareCompleteTime",
+        "sharing"
+      ],
+      "title": "Clue"
+    },
+    "Trading": {
+      "type": "object",
+      "properties": {
+        "slotId": {
+          "type": "string",
+          "description": "In-game building slot (基建设施建造位) ID.",
+          "examples": ["slot_1"]
+        },
+        "level": {
+          "type": "integer",
+          "description": "Building's level (基建设施等级).",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "chars": {
+          "type": "array",
+          "description": "List of operators (干员) that are currently located (进驻) in the building.",
+          "items": {
+            "$ref": "#/definitions/ControlChar"
+          }
+        },
+        "completeWorkTime": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) when the trading (贸易站) will complete its current trade.",
+          "examples": [1554105600]
+        },
+        "lastUpdateTime": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) when the trading (贸易站) was last updated. TODO: Find out what this timestamp is used for.",
+          "examples": [1554105600]
+        },
+        "strategy": {
+          "$ref": "#/definitions/Strategy"
+        },
+        "stock": {
+          "type": "array",
+          "description": "List of stocks (库存) the trading (贸易站) currently has.",
+          "items": {
+            "$ref": "#/definitions/Stock"
+          }
+        },
+        "stockLimit": {
+          "type": "integer",
+          "description": "Trading's stock limit (库存上限)."
+        }
+      },
+      "required": [
+        "chars",
+        "completeWorkTime",
+        "lastUpdateTime",
+        "level",
+        "slotId",
+        "stock",
+        "stockLimit",
+        "strategy"
+      ],
+      "description": "Trading (贸易站) building.",
+      "title": "Trading"
+    },
+    "Stock": {
+      "type": "object",
+      "properties": {
+        "instId": {
+          "type": "integer",
+          "format": "integer"
+        },
+        "type": {
+          "$ref": "#/definitions/Strategy"
+        },
+        "delivery": {
+          "type": "array",
+          "description": "List of items needed to deliver (交付) in order to get the gain (收益). These items will be consumed when the delivery is complete.",
+          "items": {
+            "$ref": "#/definitions/StockItem"
+          }
+        },
+        "gain": {
+          "$ref": "#/definitions/StockItem",
+          "description": "Gain (收益) the user will get when the delivery is complete."
+        },
+        "isViolated": {
+          "type": "boolean",
+          "description": "TODO: Find out what this value is used for."
+        }
+      },
+      "required": ["delivery", "gain", "instId", "isViolated", "type"],
+      "title": "Stock"
+    },
+    "StockItem": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "integer",
+          "description": "In-game item (物品) ID."
+        },
+        "count": {
+          "type": "integer",
+          "description": "Amount of the item (物品)."
+        },
+        "type": {
+          "$ref": "#/definitions/ItemType"
+        }
+      },
+      "required": ["count", "id", "type"],
+      "title": "StockItem"
+    },
+    "Training": {
+      "type": "object",
+      "properties": {
+        "slotId": {
+          "type": "string"
+        },
+        "level": {
+          "type": "integer"
+        },
+        "trainee": {
+          "$ref": "#/definitions/Traine"
+        },
+        "trainer": {
+          "$ref": "#/definitions/Traine"
+        },
+        "remainPoint": {
+          "type": "integer"
+        },
+        "speed": {
+          "type": "number"
+        },
+        "lastUpdateTime": {
+          "type": "integer"
+        },
+        "remainSecs": {
+          "type": "integer"
+        },
+        "slotState": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "lastUpdateTime",
+        "level",
+        "remainPoint",
+        "remainSecs",
+        "slotId",
+        "slotState",
+        "speed",
+        "trainee",
+        "trainer"
+      ],
+      "title": "Training"
+    },
+    "Traine": {
+      "type": "object",
+      "properties": {
+        "charId": {
+          "type": "string"
+        },
+        "targetSkill": {
+          "type": "integer"
+        },
+        "ap": {
+          "type": "integer"
+        },
+        "lastApAddTime": {
+          "type": "integer"
+        }
+      },
+      "required": ["ap", "charId", "lastApAddTime"],
+      "title": "Traine"
+    },
+    "Campaign": {
+      "type": "object",
+      "properties": {
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CampaignRecord"
+          }
+        },
+        "reward": {
+          "$ref": "#/definitions/DailyClass"
+        }
+      },
+      "required": ["records", "reward"],
+      "title": "Campaign"
+    },
+    "CampaignRecord": {
+      "type": "object",
+      "properties": {
+        "campaignId": {
+          "type": "string"
+        },
+        "maxKills": {
+          "type": "integer"
+        }
+      },
+      "required": ["campaignId", "maxKills"],
+      "title": "CampaignRecord"
+    },
+    "DailyClass": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer"
+        },
+        "total": {
+          "type": "integer"
+        }
+      },
+      "required": ["current", "total"],
+      "title": "DailyClass"
+    },
+    "CampaignInfoMap": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "campaignZoneId": {
+          "type": "string"
+        }
+      },
+      "required": ["campaignZoneId", "id", "name"],
+      "title": "CampaignInfoMap"
+    },
+    "CampaignZoneInfoMap": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": ["id", "name"],
+      "title": "CampaignZoneInfoMap"
+    },
+    "CharInfoMap": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "nationId": {
+          "type": "string"
+        },
+        "groupId": {
+          "$ref": "#/definitions/GroupID"
+        },
+        "displayNumber": {
+          "type": "string"
+        },
+        "rarity": {
+          "type": "integer"
+        },
+        "profession": {
+          "$ref": "#/definitions/Profession"
+        },
+        "subProfessionId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "displayNumber",
+        "groupId",
+        "id",
+        "name",
+        "nationId",
+        "profession",
+        "rarity",
+        "subProfessionId"
+      ],
+      "title": "CharInfoMap"
+    },
+    "DataChar": {
+      "type": "object",
+      "properties": {
+        "charId": {
+          "type": "string",
+          "description": "In-game Operator (干员) ID.",
+          "examples": ["char_1028_texas2"]
+        },
+        "skinId": {
+          "type": "string",
+          "description": "In-game Skin (干员服装) ID.",
+          "examples": ["char_1028_texas2#2"]
+        },
+        "level": {
+          "type": "integer",
+          "description": "Operator's level (干员等级). Maximum value depends on the rarity of the operator.",
+          "minimum": 1,
+          "maximum": 90
+        },
+        "evolvePhase": {
+          "type": "integer",
+          "description": "Operator's current evolution phase (精英化等级). Maximum value depends on the rarity of the operator.",
+          "enum": [0, 1, 2],
+          "minimum": 0,
+          "maximum": 2
+        },
+        "potentialRank": {
+          "type": "integer",
+          "description": "Operator's potential rank (潜能等级). Maximum value is 6. Initial value is 1 (right after the user acquired the operator).",
+          "enum": [1, 2, 3, 4, 5, 6],
+          "minimum": 1,
+          "maximum": 6
+        },
+        "mainSkillLvl": {
+          "type": "integer",
+          "description": "Operator's current skill (技能) level (技能等级). This level does not include the \"specialize\" level (专精等级).",
+          "minimum": 1,
+          "maximum": 7
+        },
+        "skills": {
+          "type": "array",
+          "description": "All available skills (技能) of the operator.",
+          "items": {
+            "$ref": "#/definitions/Skill"
+          }
+        },
+        "equip": {
+          "type": "array",
+          "description": "All available equipments (模组) of the operator.",
+          "items": {
+            "$ref": "#/definitions/Equip"
+          }
+        },
+        "favorPercent": {
+          "type": "integer",
+          "description": "Operator's favor (信赖值) percentage. Maximum value is 200. Initial value is 0 (right after the user acquired the operator).",
+          "minimum": 0,
+          "maximum": 200
+        },
+        "defaultSkillId": {
+          "type": "string",
+          "description": "Operator's default skill (默认技能) ID.",
+          "examples": ["skchr_texas2_1"]
+        },
+        "gainTime": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) when the user acquired the operator.",
+          "examples": [1609459200]
+        },
+        "defaultEquipId": {
+          "type": "string",
+          "description": "Operator's default equipment (默认模组) ID.",
+          "examples": ["equip_1028_texas2"]
+        }
+      },
+      "required": [
+        "charId",
+        "defaultEquipId",
+        "defaultSkillId",
+        "equip",
+        "evolvePhase",
+        "favorPercent",
+        "gainTime",
+        "level",
+        "mainSkillLvl",
+        "potentialRank",
+        "skills",
+        "skinId"
+      ],
+      "title": "DataChar",
+      "description": "Operator (干员) data."
+    },
+    "Skill": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "In-game Skill (技能) ID."
+        },
+        "specializeLevel": {
+          "type": "integer",
+          "description": "Operator's current skill (技能) specialize level (专精等级)."
+        }
+      },
+      "required": ["id", "specializeLevel"],
+      "title": "Skill",
+      "description": "Operator's skill (技能)."
+    },
+    "EquipmentInfoMap": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "desc": {
+          "type": "string"
+        },
+        "typeIcon": {
+          "type": "string"
+        },
+        "typeName1": {
+          "type": "string"
+        },
+        "shiningColor": {
+          "$ref": "#/definitions/ShiningColor"
+        },
+        "typeName2": {
+          "$ref": "#/definitions/TypeName2"
+        }
+      },
+      "required": [
+        "desc",
+        "id",
+        "name",
+        "shiningColor",
+        "typeIcon",
+        "typeName1"
+      ],
+      "title": "EquipmentInfoMap"
+    },
+    "ManufactureFormulaInfoMap": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "integer"
+        },
+        "itemId": {
+          "type": "string",
+          "format": "integer"
+        },
+        "count": {
+          "type": "integer"
+        },
+        "weight": {
+          "type": "integer"
+        },
+        "costs": {
+          "type": "array",
+          "items": {}
+        },
+        "costPoint": {
+          "type": "integer"
+        }
+      },
+      "required": ["costPoint", "costs", "count", "id", "itemId", "weight"],
+      "title": "ManufactureFormulaInfoMap"
+    },
+    "Medal": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["CUSTOM"],
+          "description": "CUSTOM means user's custom medal layout. Currently only CUSTOM is supported it seems.",
+          "x-todo": "Find out what other types are."
+        },
+        "template": {
+          "type": "string",
+          "x-todo": "Find out the exact enums."
+        },
+        "templateMedalList": {
+          "type": "array",
+          "items": {}
+        },
+        "customMedalLayout": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CustomMedalLayout"
+          }
+        },
+        "total": {
+          "type": "integer",
+          "description": "Total number of medals the user has already acquired."
+        }
+      },
+      "required": [
+        "customMedalLayout",
+        "template",
+        "templateMedalList",
+        "total",
+        "type"
+      ],
+      "title": "Medal",
+      "description": "User's medal (蚀刻章) configuration on their profile page."
+    },
+    "CustomMedalLayout": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Medal ID.",
+          "examples": ["medal_player_charnum_06"]
+        },
+        "pos": {
+          "type": "array",
+          "description": "Position of the medal on the profile page. [x, y].\nTODO: Find out the exact range of x and y, along with the pivot they represents.",
+          "items": {
+            "type": "integer",
+            "examples": [0, 0]
+          }
+        }
+      },
+      "required": ["id", "pos"],
+      "title": "CustomMedalLayout"
+    },
+    "MedalInfoMap": {
+      "type": "object",
+      "properties": {
+        "medal_activity_6d5_01": {
+          "$ref": "#/definitions/CampaignZoneInfoMap"
+        },
+        "medal_player_charnum_06": {
+          "$ref": "#/definitions/CampaignZoneInfoMap"
+        },
+        "medal_player_joingame_03": {
+          "$ref": "#/definitions/CampaignZoneInfoMap"
+        },
+        "medal_player_recruitcount_08": {
+          "$ref": "#/definitions/CampaignZoneInfoMap"
+        }
+      },
+      "patternProperties": {
+        "^medal_": {
+          "$ref": "#/definitions/CampaignZoneInfoMap"
+        }
+      },
+      "title": "MedalInfoMap"
+    },
+    "Recruit": {
+      "type": "object",
+      "properties": {
+        "startTs": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) when the recruit (公开招募) started.",
+          "examples": [1554105600]
+        },
+        "finishTs": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) when the recruit (公开招募) will finish.",
+          "examples": [1554105600]
+        },
+        "duration": {
+          "type": "integer",
+          "description": "Duration (持续时间) of the recruit (公开招募) in seconds.",
+          "minimum": 0
+        },
+        "selectTags": {
+          "type": "array",
+          "items": {}
+        },
+        "state": {
+          "type": "integer"
+        }
+      },
+      "required": ["duration", "finishTs", "selectTags", "startTs", "state"],
+      "title": "Recruit"
+    },
+    "Rogue": {
+      "type": "object",
+      "properties": {
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RogueRecord"
+          }
+        }
+      },
+      "required": ["records"],
+      "title": "Rogue"
+    },
+    "RogueRecord": {
+      "type": "object",
+      "properties": {
+        "rogueId": {
+          "type": "string"
+        },
+        "clearTime": {
+          "type": "integer"
+        },
+        "relicCnt": {
+          "type": "integer"
+        },
+        "bank": {
+          "$ref": "#/definitions/Bank"
+        },
+        "mission": {
+          "$ref": "#/definitions/DailyClass"
+        }
+      },
+      "required": ["bank", "clearTime", "mission", "relicCnt", "rogueId"],
+      "title": "RogueRecord"
+    },
+    "Bank": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer"
+        },
+        "record": {
+          "type": "integer"
+        }
+      },
+      "required": ["current", "record"],
+      "title": "Bank"
+    },
+    "RogueInfoMap": {
+      "type": "object",
+      "properties": {
+        "rogue_1": {
+          "$ref": "#/definitions/Rogue1_Class"
+        },
+        "rogue_2": {
+          "$ref": "#/definitions/Rogue1_Class"
+        },
+        "rogue_3": {
+          "$ref": "#/definitions/Rogue1_Class"
+        }
+      },
+      "required": ["rogue_1", "rogue_2", "rogue_3"],
+      "title": "RogueInfoMap"
+    },
+    "Rogue1_Class": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "sort": {
+          "type": "integer"
+        }
+      },
+      "required": ["id", "name", "sort"],
+      "title": "Rogue1_Class"
+    },
+    "Routine": {
+      "type": "object",
+      "properties": {
+        "daily": {
+          "$ref": "#/definitions/DailyClass"
+        },
+        "weekly": {
+          "$ref": "#/definitions/DailyClass"
+        }
+      },
+      "required": ["daily", "weekly"],
+      "title": "Routine"
+    },
+    "ShowConfig": {
+      "type": "object",
+      "description": "User preferences of the \"show\" page options.",
+      "properties": {
+        "charSwitch": {
+          "type": "boolean",
+          "default": true,
+          "description": "Current set value of the user preference \"向其他用户展示我的干员\"."
+        },
+        "skinSwitch": {
+          "type": "boolean",
+          "default": true,
+          "description": "Current set value of the user preference \"向其他用户展示我的服装\"."
+        },
+        "standingsSwitch": {
+          "type": "boolean",
+          "default": true,
+          "description": "Current set value of the user preference \"向其他用户展示我的战绩\"."
+        }
+      },
+      "required": ["charSwitch", "skinSwitch", "standingsSwitch"],
+      "title": "ShowConfig"
+    },
+    "SkinInfoMap": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "brandId": {
+          "type": "string"
+        },
+        "brandName": {
+          "type": "string"
+        },
+        "brandCapitalName": {
+          "type": "string"
+        },
+        "illustId": {
+          "type": "string"
+        },
+        "dynIllustId": {
+          "type": "string"
+        },
+        "avatarId": {
+          "type": "string"
+        },
+        "portraitId": {
+          "type": "string"
+        },
+        "sortId": {
+          "type": "integer"
+        },
+        "displayTagId": {
+          "$ref": "#/definitions/DisplayTagID"
+        },
+        "skinGroupId": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "avatarId",
+        "brandCapitalName",
+        "brandId",
+        "brandName",
+        "displayTagId",
+        "dynIllustId",
+        "id",
+        "illustId",
+        "name",
+        "portraitId",
+        "skinGroupId",
+        "sortId"
+      ],
+      "title": "SkinInfoMap"
+    },
+    "Skin": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "In-game Skin (服装) ID.",
+          "examples": ["char_1028_texas2#2"]
+        },
+        "ts": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) when the user acquired the skin.",
+          "examples": [1609459200]
+        }
+      },
+      "required": ["id", "ts"],
+      "title": "Skin",
+      "description": "Skin (服装) data."
+    },
+    "StageInfoMap": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "code": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": ["code", "id", "name"],
+      "title": "StageInfoMap"
+    },
+    "Status": {
+      "type": "object",
+      "description": "User profile and status",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "format": "integer",
+          "description": "In-game ID. Also found at the home page of the game, located at the left of the screen."
+        },
+        "name": {
+          "type": "string",
+          "description": "In-game nickname. Also found at the home page of the game, located at the left of the screen."
+        },
+        "level": {
+          "type": "integer",
+          "description": "Current level of the user. Maximum level is 120.",
+          "minimum": 1,
+          "maximum": 120
+        },
+        "avatar": {
+          "$ref": "#/definitions/Avatar"
+        },
+        "registerTs": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) of the in-game account creation time.",
+          "examples": [1584537600]
+        },
+        "mainStageProgress": {
+          "type": "string",
+          "description": "Current progress of the main story. Value is a stageId string.",
+          "examples": ["main_01-01"]
+        },
+        "secretary": {
+          "$ref": "#/definitions/Secretary"
+        },
+        "resume": {
+          "type": "string",
+          "description": "User's biography (签名).",
+          "default": "相关功能优化中，签名暂无法保存，请等待后续开放。（修改任务不受影响）"
+        },
+        "subscriptionEnd": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) of the monthly subscription (月卡) end time. Unsure about the scenario where the user does not have a monthly subscription.",
+          "examples": [1584537600]
+        },
+        "ap": {
+          "$ref": "#/definitions/Ap"
+        },
+        "storeTs": {
+          "type": "integer"
+        },
+        "lastOnlineTs": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) of the last online time.",
+          "examples": [1584537600]
+        },
+        "charCnt": {
+          "type": "integer",
+          "description": "Total number of characters (干员) owned by the user. However, this value is currently always 0.",
+          "examples": [0]
+        },
+        "furnitureCnt": {
+          "type": "integer",
+          "description": "Total number of furniture (家具) owned by the user. However, this value is currently always 0.",
+          "examples": [0]
+        },
+        "skinCnt": {
+          "type": "integer",
+          "description": "Total number of skins (服装) owned by the user. However, this value is currently always 0.",
+          "examples": [0]
+        }
+      },
+      "required": [
+        "ap",
+        "avatar",
+        "charCnt",
+        "furnitureCnt",
+        "lastOnlineTs",
+        "level",
+        "mainStageProgress",
+        "name",
+        "registerTs",
+        "resume",
+        "secretary",
+        "skinCnt",
+        "storeTs",
+        "subscriptionEnd",
+        "uid"
+      ],
+      "title": "Status"
+    },
+    "Ap": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "description": "Current AP (理智).",
+          "minimum": 0,
+          "maximum": 135,
+          "examples": [28]
+        },
+        "max": {
+          "type": "integer",
+          "description": "Maximum AP (理智). The maximum AP depends on the user's level.",
+          "minimum": 1,
+          "maximum": 135,
+          "examples": [135]
+        },
+        "lastApAddTime": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) of the last AP (理智) addition time.",
+          "examples": [1584537600]
+        },
+        "completeRecoveryTime": {
+          "type": "integer",
+          "description": "Timestamp (in seconds) of when the AP (理智) will be fully recovered to the current maximum AP (理智) of the user.",
+          "examples": [1584537600]
+        }
+      },
+      "required": ["completeRecoveryTime", "current", "lastApAddTime", "max"],
+      "title": "Ap",
+      "description": "User's AP (理智)."
+    },
+    "Avatar": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["ICON"]
+        },
+        "id": {
+          "type": "string",
+          "description": "In-game avatar ID.",
+          "examples": ["avatar_special_06"]
+        }
+      },
+      "required": ["id", "type"],
+      "title": "Avatar"
+    },
+    "Secretary": {
+      "type": "object",
+      "properties": {
+        "charId": {
+          "type": "string",
+          "description": "In-game character ID.",
+          "examples": ["char_002_amiya"]
+        },
+        "skinId": {
+          "type": "string",
+          "description": "In-game skin ID.",
+          "examples": ["char_002_amiya_1"]
+        }
+      },
+      "required": ["charId", "skinId"],
+      "title": "Secretary",
+      "description": "User's secretary (助理)."
+    },
+    "Tower": {
+      "type": "object",
+      "properties": {
+        "records": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TowerRecord"
+          }
+        },
+        "reward": {
+          "$ref": "#/definitions/TowerReward"
+        }
+      },
+      "required": ["records", "reward"],
+      "title": "Tower"
+    },
+    "TowerRecord": {
+      "type": "object",
+      "properties": {
+        "towerId": {
+          "type": "string"
+        },
+        "best": {
+          "type": "integer"
+        },
+        "hasHard": {
+          "type": "boolean"
+        },
+        "stageNum": {
+          "type": "integer"
+        },
+        "unlockHard": {
+          "type": "boolean"
+        },
+        "hardBest": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "best",
+        "hardBest",
+        "hasHard",
+        "stageNum",
+        "towerId",
+        "unlockHard"
+      ],
+      "title": "TowerRecord"
+    },
+    "TowerReward": {
+      "type": "object",
+      "properties": {
+        "higherItem": {
+          "$ref": "#/definitions/DailyClass"
+        },
+        "lowerItem": {
+          "$ref": "#/definitions/DailyClass"
+        },
+        "termTs": {
+          "type": "integer"
+        }
+      },
+      "required": ["higherItem", "lowerItem", "termTs"],
+      "title": "TowerReward"
+    },
+    "TowerInfoMap": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "subName": {
+          "type": "string"
+        },
+        "hasHard": {
+          "type": "boolean"
+        },
+        "stageNum": {
+          "type": "integer"
+        }
+      },
+      "required": ["hasHard", "id", "name", "stageNum", "subName"],
+      "title": "TowerInfoMap"
+    },
+    "ActivityInfoMapType": {
+      "type": "string",
+      "enum": ["SIDESTORY", "MINISTORY", "", "BRANCHLINE"],
+      "title": "ActivityInfoMapType"
+    },
+    "ItemType": {
+      "type": "string",
+      "enum": ["MATERIAL", "GOLD"],
+      "description": "In-game item (物品) type. TODO: add more types.",
+      "title": "ItemType"
+    },
+    "Strategy": {
+      "type": "string",
+      "enum": ["O_GOLD"],
+      "description": "Trading (贸易) type. TODO: add more types.",
+      "title": "Strategy"
+    },
+    "GroupID": {
+      "type": "string",
+      "enum": [
+        "",
+        "lgd",
+        "elite",
+        "penguin",
+        "dublinn",
+        "abyssal",
+        "rhine",
+        "blacksteel",
+        "glasgow",
+        "babel",
+        "sweep",
+        "karlan",
+        "sui",
+        "siesta",
+        "pinus"
+      ],
+      "title": "GroupID"
+    },
+    "Profession": {
+      "type": "string",
+      "enum": [
+        "CASTER",
+        "MEDIC",
+        "WARRIOR",
+        "SUPPORT",
+        "SNIPER",
+        "SPECIAL",
+        "PIONEER",
+        "TANK"
+      ],
+      "title": "Profession"
+    },
+    "ShiningColor": {
+      "type": "string",
+      "enum": ["grey", "red", "yellow", "blue", "green"],
+      "title": "ShiningColor"
+    },
+    "TypeName2": {
+      "type": "string",
+      "enum": ["X", "Y"],
+      "title": "TypeName2"
+    },
+    "DisplayTagID": {
+      "type": "string",
+      "enum": [
+        "活动获得",
+        "设定集",
+        "",
+        "联动获得",
+        "特典获得",
+        "赛季服饰",
+        "集成战略"
+      ],
+      "title": "DisplayTagID"
+    }
+  }
+}
