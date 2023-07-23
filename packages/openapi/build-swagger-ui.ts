@@ -5,7 +5,7 @@ import swaggerUi from 'swagger-ui-dist'
 import { renderDocument } from './lib/renderer'
 
 async function main() {
-  await fs.rm('./dist', { recursive: true })
+  await fs.rm('./dist', { recursive: true, force: true })
 
   const document = await renderDocument() // now the openapi 3 document is available at `document` as a Record<string, any>
 
