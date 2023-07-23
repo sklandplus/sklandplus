@@ -1,11 +1,10 @@
 {
   "extends": "tsconfig/base.json",
-  "include": [".", "**/*.d.ts"],
-  "exclude": ["dist", "build", "node_modules"],
+  "include": ["build-intermediate"],
   "compilerOptions": {
     "resolveJsonModule": true,
     "target": "es2017",
-    "baseUrl": "src/lib",
+    "baseUrl": "build-intermediate",
     "outDir": "build/main"
   }
 }

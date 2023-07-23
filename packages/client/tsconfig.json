@@ -1,11 +1,11 @@
 {
   "extends": "tsconfig/base.json",
-  "include": [".", "**/*.d.ts"],
+  "include": ["src", "src/**/*.d.ts"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "resolveJsonModule": true,
     "target": "es2017",
-    "baseUrl": "src/lib",
+    "rootDir": "src",
     "outDir": "build/main"
   }
 }

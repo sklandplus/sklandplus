@@ -13,7 +13,7 @@
     }
   },
   "required": ["code", "data", "message"],
-  "title": "getGamePlayerInfo_Response",
+  "title": "GetGamePlayerInfoResponse",
   "definitions": {
     "Data": {
       "type": "object",

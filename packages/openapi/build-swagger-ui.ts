@@ -2,7 +2,7 @@ import fs from 'fs/promises'
 import path from 'path'
 // @ts-ignore
 import swaggerUi from 'swagger-ui-dist'
-import { renderDocument } from './lib/renderer'
+import { renderDocument } from './src/lib/renderer'
 
 async function main() {
   await fs.rm('./dist', { recursive: true, force: true })

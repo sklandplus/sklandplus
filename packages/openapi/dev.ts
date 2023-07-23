@@ -1,6 +1,6 @@
 import express from 'express'
 import swaggerUi from 'swagger-ui-express'
-import { renderDocument } from './lib/renderer'
+import { renderDocument } from './src/lib/renderer'
 
 async function main() {
   const app = express()
