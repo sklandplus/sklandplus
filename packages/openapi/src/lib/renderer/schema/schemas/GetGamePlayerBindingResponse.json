@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
   "type": "object",
-  "additionalProperties": false,
   "properties": {
     "code": {
       "type": "integer",
@@ -19,7 +18,6 @@
   "definitions": {
     "Data": {
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "list": {
           "type": "array",
@@ -33,7 +31,6 @@
     },
     "List": {
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "appCode": {
           "type": "string",
@@ -55,7 +52,6 @@
     },
     "BindingList": {
       "type": "object",
-      "additionalProperties": false,
       "properties": {
         "uid": {
           "type": "string",
