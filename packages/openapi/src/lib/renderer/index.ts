@@ -73,6 +73,23 @@ export const renderDocument = async () => {
       name: 'game',
       description: 'Game-related Operations',
     })
+    .addPath('/api/v1/game', {
+      get: {
+        tags: ['game'],
+        summary: 'Get Current Available Games',
+        operationId: 'GetGames',
+        responses: {
+          200: {
+            description: 'OK',
+            content: {
+              'application/json': {
+                schema: registry.assertThenRef('GetGamesResponse'),
+              },
+            },
+          },
+        },
+      },
+    })
     .addPath('/api/v1/game/player/info', {
       get: {
         ...SharedOperationMixin.authenticated(),

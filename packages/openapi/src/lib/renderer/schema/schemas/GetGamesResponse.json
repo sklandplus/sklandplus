@@ -1,0 +1,281 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "message": {
+      "type": "string"
+    },
+    "data": {
+      "$ref": "#/definitions/Data"
+    }
+  },
+  "required": ["code", "data", "message"],
+  "title": "GetGamesResponse",
+  "definitions": {
+    "Data": {
+      "type": "object",
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/List"
+          }
+        }
+      },
+      "required": ["list"],
+      "title": "Data"
+    },
+    "List": {
+      "type": "object",
+      "properties": {
+        "game": {
+          "$ref": "#/definitions/Game"
+        },
+        "cates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Cate"
+          }
+        },
+        "quickaccesses": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Quickaccess"
+          }
+        },
+        "tag": {
+          "$ref": "#/definitions/Tag"
+        }
+      },
+      "required": ["cates", "game", "quickaccesses", "tag"],
+      "title": "List"
+    },
+    "Cate": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "gameId": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "nameIcon": {
+          "$ref": "#/definitions/Icon"
+        },
+        "icon": {
+          "$ref": "#/definitions/Icon"
+        },
+        "kind": {
+          "type": "integer"
+        },
+        "allowedViewKinds": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "position": {
+          "type": "integer"
+        },
+        "bannerOnOff": {
+          "type": "integer"
+        },
+        "headlineOnOff": {
+          "type": "integer"
+        },
+        "billboardOnOff": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "startAtTs": {
+          "type": "integer"
+        },
+        "createdAtTs": {
+          "type": "integer"
+        },
+        "updatedAtTs": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "allowedViewKinds",
+        "bannerOnOff",
+        "billboardOnOff",
+        "createdAtTs",
+        "description",
+        "gameId",
+        "headlineOnOff",
+        "icon",
+        "id",
+        "kind",
+        "name",
+        "nameIcon",
+        "position",
+        "startAtTs",
+        "status",
+        "updatedAtTs"
+      ],
+      "title": "Cate"
+    },
+    "Icon": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "qt-uri-protocols": ["https"],
+          "qt-uri-extensions": [".jpg", ".png"]
+        },
+        "width": {
+          "type": "integer"
+        },
+        "height": {
+          "type": "integer"
+        },
+        "size": {
+          "type": "integer"
+        },
+        "format": {
+          "$ref": "#/definitions/Format"
+        }
+      },
+      "required": ["format", "height", "size", "url", "width"],
+      "title": "Icon"
+    },
+    "Game": {
+      "type": "object",
+      "properties": {
+        "gameId": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "iconUrl": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": ["https"],
+          "qt-uri-extensions": [".png"]
+        },
+        "backgroundUrl": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": ["https"],
+          "qt-uri-extensions": [".png"]
+        }
+      },
+      "required": ["backgroundUrl", "gameId", "iconUrl", "name"],
+      "title": "Game"
+    },
+    "Quickaccess": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "gameId": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "icon": {
+          "$ref": "#/definitions/Icon"
+        },
+        "link": {
+          "type": "string",
+          "qt-uri-protocols": ["https"]
+        },
+        "position": {
+          "type": "integer"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "startAtTs": {
+          "type": "integer"
+        },
+        "createdAtTs": {
+          "type": "integer"
+        },
+        "updatedAtTs": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "createdAtTs",
+        "gameId",
+        "icon",
+        "id",
+        "link",
+        "name",
+        "position",
+        "startAtTs",
+        "status",
+        "updatedAtTs"
+      ],
+      "title": "Quickaccess"
+    },
+    "Tag": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "cover": {
+          "type": "string",
+          "format": "uri",
+          "qt-uri-protocols": ["https"],
+          "qt-uri-extensions": [".png"]
+        },
+        "publishAtTs": {
+          "type": "integer"
+        },
+        "createdAtTs": {
+          "type": "integer"
+        },
+        "updatedAtTs": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "cover",
+        "createdAtTs",
+        "description",
+        "id",
+        "name",
+        "publishAtTs",
+        "status",
+        "updatedAtTs"
+      ],
+      "title": "Tag"
+    },
+    "Format": {
+      "type": "string",
+      "enum": ["", "jpg", "png"],
+      "title": "Format"
+    }
+  }
+}
