@@ -83,7 +83,7 @@ export const renderDocument = async () => {
             description: 'OK',
             content: {
               'application/json': {
-                schema: registry.assertThenRef('GetGamesResponse'),
+                schema: registry.assertThenRef('GetGamesResponseData'),
               },
             },
           },
@@ -102,7 +102,7 @@ export const renderDocument = async () => {
             description: 'OK',
             content: {
               'application/json': {
-                schema: registry.assertThenRef('GetGamePlayerInfoResponse'),
+                schema: registry.assertThenRef('GetGamePlayerInfoResponseData'),
               },
             },
           },
@@ -122,7 +122,9 @@ export const renderDocument = async () => {
             description: 'OK',
             content: {
               'application/json': {
-                schema: registry.assertThenRef('GetGamePlayerBindingResponse'),
+                schema: registry.assertThenRef(
+                  'GetGamePlayerBindingResponseData',
+                ),
               },
             },
           },

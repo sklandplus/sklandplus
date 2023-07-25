@@ -2,33 +2,15 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "type": "object",
   "properties": {
-    "code": {
-      "type": "integer",
-      "examples": [0]
-    },
-    "message": {
-      "type": "string",
-      "examples": ["OK"]
-    },
-    "data": {
-      "$ref": "#/definitions/Data"
+    "list": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/List"
+      }
     }
   },
-  "required": ["code", "data", "message"],
+  "required": ["list"],
   "definitions": {
-    "Data": {
-      "type": "object",
-      "properties": {
-        "list": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/List"
-          }
-        }
-      },
-      "required": ["list"],
-      "title": "Data"
-    },
     "List": {
       "type": "object",
       "properties": {

@@ -2,162 +2,145 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "type": "object",
   "properties": {
-    "code": {
-      "type": "integer"
+    "currentTs": {
+      "type": "integer",
+      "description": "Timestamp in seconds",
+      "examples": [1554105600]
     },
-    "message": {
-      "type": "string"
+    "showConfig": {
+      "$ref": "#/definitions/ShowConfig"
     },
-    "data": {
-      "$ref": "#/definitions/Data"
+    "status": {
+      "$ref": "#/definitions/Status"
+    },
+    "medal": {
+      "$ref": "#/definitions/Medal"
+    },
+    "assistChars": {
+      "type": "array",
+      "description": "User's assistant operators/support unit (助战干员) configuration.",
+      "items": {
+        "$ref": "#/definitions/AssistChar"
+      }
+    },
+    "chars": {
+      "type": "array",
+      "description": "List of operators (干员) the user owns.",
+      "items": {
+        "$ref": "#/definitions/DataChar"
+      }
+    },
+    "skins": {
+      "type": "array",
+      "description": "List of skins (干员服装) the user owns.",
+      "items": {
+        "$ref": "#/definitions/Skin"
+      }
+    },
+    "building": {
+      "$ref": "#/definitions/Building"
+    },
+    "recruit": {
+      "type": "array",
+      "description": "User's current recruit (公开招募) status.",
+      "items": {
+        "$ref": "#/definitions/Recruit"
+      }
+    },
+    "campaign": {
+      "$ref": "#/definitions/Campaign"
+    },
+    "tower": {
+      "$ref": "#/definitions/Tower"
+    },
+    "rogue": {
+      "$ref": "#/definitions/Rogue"
+    },
+    "routine": {
+      "$ref": "#/definitions/Routine"
+    },
+    "activity": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Activity"
+      }
+    },
+    "charInfoMap": {
+      "$ref": "#/definitions/CharInfoMap"
+    },
+    "skinInfoMap": {
+      "$ref": "#/definitions/SkinInfoMap"
+    },
+    "stageInfoMap": {
+      "$ref": "#/definitions/StageInfoMap"
+    },
+    "activityInfoMap": {
+      "$ref": "#/definitions/ActivityInfoMap"
+    },
+    "zoneInfoMap": {
+      "$ref": "#/definitions/CampaignZoneInfoMap"
+    },
+    "towerInfoMap": {
+      "$ref": "#/definitions/TowerInfoMap"
+    },
+    "rogueInfoMap": {
+      "$ref": "#/definitions/RogueInfoMap"
+    },
+    "campaignInfoMap": {
+      "$ref": "#/definitions/CampaignInfoMap"
+    },
+    "medalInfoMap": {
+      "$ref": "#/definitions/MedalInfoMap"
+    },
+    "campaignZoneInfoMap": {
+      "$ref": "#/definitions/CampaignZoneInfoMap"
+    },
+    "equipmentInfoMap": {
+      "$ref": "#/definitions/EquipmentInfoMap"
+    },
+    "manufactureFormulaInfoMap": {
+      "$ref": "#/definitions/ManufactureFormulaInfoMap"
+    },
+    "charAssets": {
+      "type": "array",
+      "items": {}
+    },
+    "skinAssets": {
+      "type": "array",
+      "items": {}
     }
   },
-  "required": ["code", "data", "message"],
-  "title": "GetGamePlayerInfoResponse",
+  "required": [
+    "activity",
+    "activityInfoMap",
+    "assistChars",
+    "building",
+    "campaign",
+    "campaignInfoMap",
+    "campaignZoneInfoMap",
+    "charAssets",
+    "charInfoMap",
+    "chars",
+    "currentTs",
+    "equipmentInfoMap",
+    "manufactureFormulaInfoMap",
+    "medal",
+    "medalInfoMap",
+    "recruit",
+    "rogue",
+    "rogueInfoMap",
+    "routine",
+    "showConfig",
+    "skinAssets",
+    "skinInfoMap",
+    "skins",
+    "stageInfoMap",
+    "status",
+    "tower",
+    "towerInfoMap",
+    "zoneInfoMap"
+  ],
   "definitions": {
-    "Data": {
-      "type": "object",
-      "properties": {
-        "currentTs": {
-          "type": "integer",
-          "description": "Timestamp in seconds",
-          "examples": [1554105600]
-        },
-        "showConfig": {
-          "$ref": "#/definitions/ShowConfig"
-        },
-        "status": {
-          "$ref": "#/definitions/Status"
-        },
-        "medal": {
-          "$ref": "#/definitions/Medal"
-        },
-        "assistChars": {
-          "type": "array",
-          "description": "User's assistant operators/support unit (助战干员) configuration.",
-          "items": {
-            "$ref": "#/definitions/AssistChar"
-          }
-        },
-        "chars": {
-          "type": "array",
-          "description": "List of operators (干员) the user owns.",
-          "items": {
-            "$ref": "#/definitions/DataChar"
-          }
-        },
-        "skins": {
-          "type": "array",
-          "description": "List of skins (干员服装) the user owns.",
-          "items": {
-            "$ref": "#/definitions/Skin"
-          }
-        },
-        "building": {
-          "$ref": "#/definitions/Building"
-        },
-        "recruit": {
-          "type": "array",
-          "description": "User's current recruit (公开招募) status.",
-          "items": {
-            "$ref": "#/definitions/Recruit"
-          }
-        },
-        "campaign": {
-          "$ref": "#/definitions/Campaign"
-        },
-        "tower": {
-          "$ref": "#/definitions/Tower"
-        },
-        "rogue": {
-          "$ref": "#/definitions/Rogue"
-        },
-        "routine": {
-          "$ref": "#/definitions/Routine"
-        },
-        "activity": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Activity"
-          }
-        },
-        "charInfoMap": {
-          "$ref": "#/definitions/CharInfoMap"
-        },
-        "skinInfoMap": {
-          "$ref": "#/definitions/SkinInfoMap"
-        },
-        "stageInfoMap": {
-          "$ref": "#/definitions/StageInfoMap"
-        },
-        "activityInfoMap": {
-          "$ref": "#/definitions/ActivityInfoMap"
-        },
-        "zoneInfoMap": {
-          "$ref": "#/definitions/CampaignZoneInfoMap"
-        },
-        "towerInfoMap": {
-          "$ref": "#/definitions/TowerInfoMap"
-        },
-        "rogueInfoMap": {
-          "$ref": "#/definitions/RogueInfoMap"
-        },
-        "campaignInfoMap": {
-          "$ref": "#/definitions/CampaignInfoMap"
-        },
-        "medalInfoMap": {
-          "$ref": "#/definitions/MedalInfoMap"
-        },
-        "campaignZoneInfoMap": {
-          "$ref": "#/definitions/CampaignZoneInfoMap"
-        },
-        "equipmentInfoMap": {
-          "$ref": "#/definitions/EquipmentInfoMap"
-        },
-        "manufactureFormulaInfoMap": {
-          "$ref": "#/definitions/ManufactureFormulaInfoMap"
-        },
-        "charAssets": {
-          "type": "array",
-          "items": {}
-        },
-        "skinAssets": {
-          "type": "array",
-          "items": {}
-        }
-      },
-      "required": [
-        "activity",
-        "activityInfoMap",
-        "assistChars",
-        "building",
-        "campaign",
-        "campaignInfoMap",
-        "campaignZoneInfoMap",
-        "charAssets",
-        "charInfoMap",
-        "chars",
-        "currentTs",
-        "equipmentInfoMap",
-        "manufactureFormulaInfoMap",
-        "medal",
-        "medalInfoMap",
-        "recruit",
-        "rogue",
-        "rogueInfoMap",
-        "routine",
-        "showConfig",
-        "skinAssets",
-        "skinInfoMap",
-        "skins",
-        "stageInfoMap",
-        "status",
-        "tower",
-        "towerInfoMap",
-        "zoneInfoMap"
-      ],
-      "title": "Data"
-    },
     "Activity": {
       "type": "object",
       "properties": {

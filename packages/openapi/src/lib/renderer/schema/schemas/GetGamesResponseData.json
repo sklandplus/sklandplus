@@ -2,32 +2,15 @@
   "$schema": "http://json-schema.org/draft-06/schema#",
   "type": "object",
   "properties": {
-    "code": {
-      "type": "integer"
-    },
-    "message": {
-      "type": "string"
-    },
-    "data": {
-      "$ref": "#/definitions/Data"
+    "list": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/List"
+      }
     }
   },
-  "required": ["code", "data", "message"],
-  "title": "GetGamesResponse",
+  "required": ["list"],
   "definitions": {
-    "Data": {
-      "type": "object",
-      "properties": {
-        "list": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/List"
-          }
-        }
-      },
-      "required": ["list"],
-      "title": "Data"
-    },
     "List": {
       "type": "object",
       "properties": {

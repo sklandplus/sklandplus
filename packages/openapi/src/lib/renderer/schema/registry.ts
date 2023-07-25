@@ -31,14 +31,44 @@ export class SchemaRegistry {
     })
   }
 
-  assertThenRef(name: string) {
+  assertThenRef(
+    name: string,
+    options: {
+      wrapped?: boolean
+    } = {
+      wrapped: true,
+    },
+  ) {
     const found = this.registry.find((item) => item.name === name)
     if (!found) {
       throw new Error(
         `ensuredRef: assertion failed: Schema "${name}" not found`,
       )
     }
-    return { $ref: `#/components/schemas/${name}` }
+    if (!options.wrapped) {
+      return { $ref: `#/components/schemas/${name}` }
+    }
+    return {
+      type: 'object',
+      properties: {
+        code: {
+          type: 'integer',
+          description: 'Business-level response code',
+          example: 0,
+        },
+        message: {
+          type: 'string',
+          description: 'Business-level response message',
+          example: 'OK',
+        },
+        data: {
+          $ref: `#/components/schemas/${name}`,
+        },
+      },
+      required: ['code', 'message', 'data'],
+      description: `Wrapped response of type "${name}"`,
+      title: `Wrapped "${name}"`,
+    }
   }
 
   addToBuilder(builder: OpenApiBuilder) {
