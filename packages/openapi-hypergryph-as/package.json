@@ -1,0 +1,58 @@
+{
+  "name": "@sklandplus/openapi-hypergryph-as",
+  "version": "0.0.0",
+  "license": "MIT",
+  "description": "A handcrafted OpenAPI 3 schema for Skland API, exported in both JSON and YAML formats.",
+  "main": "build/main/index.js",
+  "typings": "build/main/index.d.ts",
+  "module": "build/module/index.js",
+  "repository": "https://github.com/sklandplus/sklandplus",
+  "keywords": [
+    "skland",
+    "sklandplus"
+  ],
+  "files": [
+    "build/main",
+    "build/module",
+    "!**/*.spec.*",
+    "!**/*.json",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "lint": "eslint \"**/*.ts*\"",
+    "clean": "rimraf build",
+    "build": "run-s clean build:compile build:tsc",
+    "build:compile": "esno build.ts",
+    "build:tsc": "run-p build:tsc:*",
+    "build:tsc:main": "tsc -p tsconfig.build-main.json",
+    "build:tsc:module": "tsc -p tsconfig.build-module.json",
+    "build:swagger-ui": "esno build-swagger-ui.ts",
+    "dev": "nodemon --watch src --ext ts,json --exec \"yarn esno dev.ts\""
+  },
+  "devDependencies": {
+    "@apidevtools/json-schema-ref-parser": "^10.1.0",
+    "@types/express": "^4.17.17",
+    "@types/lodash-es": "^4.17.8",
+    "@types/swagger-ui-express": "^4.1.3",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "esno": "^0.17.0",
+    "express": "^4.18.2",
+    "json-schema-to-openapi-schema": "^0.4.0",
+    "lodash-es": "^4.17.21",
+    "nodemon": "^3.0.1",
+    "npm-run-all": "^4.1.5",
+    "openapi3-ts": "^4.1.2",
+    "rimraf": "^5.0.1",
+    "swagger-ui-dist": "^5.1.3",
+    "swagger-ui-express": "^5.0.0",
+    "tsconfig": "*",
+    "typescript": "^4.5.2",
+    "yaml": "^2.3.1"
+  },
+  "dependencies": {
+    "@sklandplus/openapi": "*"
+  }
+}

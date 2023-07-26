@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "cred": {
+      "type": "string",
+      "description": "森空岛用户登录凭证",
+      "examples": [
+        "##REDACTED##"
+      ]
+    },
+    "userId": {
+      "type": "string",
+      "description": "森空岛用户 ID",
+      "examples": [
+        "101000"
+      ]
+    }
+  },
+  "required": [
+    "cred",
+    "userId"
+  ],
+  "additionalProperties": true
+}

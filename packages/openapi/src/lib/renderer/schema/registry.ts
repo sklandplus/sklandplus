@@ -3,6 +3,7 @@ import refParser from '@apidevtools/json-schema-ref-parser'
 // @ts-ignore
 import toOpenApi from 'json-schema-to-openapi-schema'
 import { OpenApiBuilder } from 'openapi3-ts/oas31'
+import { ReferenceObject, SchemaObject } from 'openapi3-ts/src/model/openapi31'
 
 export interface SchemaRegistryItem {
   name: string
@@ -31,6 +32,8 @@ export class SchemaRegistry {
     })
   }
 
+  assertThenRef(name: string, options?: { wrapped?: true }): SchemaObject
+  assertThenRef(name: string, options: { wrapped?: false }): ReferenceObject
   assertThenRef(
     name: string,
     options: {
@@ -38,7 +41,7 @@ export class SchemaRegistry {
     } = {
       wrapped: true,
     },
-  ) {
+  ): SchemaObject | ReferenceObject {
     const found = this.registry.find((item) => item.name === name)
     if (!found) {
       throw new Error(
