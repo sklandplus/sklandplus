@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "properties": {
+    "token": {
+      "type": "string",
+      "description": "鹰角网络通行证 token。注：提供的例子已经过脱敏处理",
+      "examples": [
+        "AAAALXgBLPoCAAAAZT0lzUnmq2020AAADiPjJzaWBmsoYIojpuCgAAANNpmsQSFFLlEfpJDCq6Mka/PtEf//AlIARhPVo4iPePgtFCJUqjNTN9W6egJdmjTdohmA3h1B"
+      ]
+    },
+    "appCode": {
+      "const": "4ca99fa6b56cc2ba",
+      "description": "（未知）疑似应用代码"
+    },
+    "type": {
+      "const": 0,
+      "description": "（未知）疑似登录类型"
+    }
+  },
+  "required": [
+    "appCode",
+    "token",
+    "type"
+  ],
+  "additionalProperties": true
+}
