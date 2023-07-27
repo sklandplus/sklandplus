@@ -1,6 +1,6 @@
 {
   "name": "@sklandplus/openapi-hypergryph-as",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "A handcrafted OpenAPI 3 schema for Skland API, exported in both JSON and YAML formats.",
   "main": "build/main/index.js",

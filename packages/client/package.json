@@ -1,6 +1,6 @@
 {
   "name": "@sklandplus/client",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "A client for Skland, automatically generated from the `@sklandplus/openapi` package.",
   "main": "build/main/index.js",
