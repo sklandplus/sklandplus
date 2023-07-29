@@ -66,15 +66,7 @@
           "examples": [false]
         }
       },
-      "required": [
-        "channelMasterId",
-        "channelName",
-        "isDefault",
-        "isDelete",
-        "isOfficial",
-        "nickName",
-        "uid"
-      ],
+      "required": ["channelMasterId", "channelName", "isDefault", "isDelete", "isOfficial", "nickName", "uid"],
       "title": "BindingList"
     }
   }

@@ -185,13 +185,7 @@
           }
         }
       },
-      "required": [
-        "clearedStage",
-        "stageStatus",
-        "totalStage",
-        "zoneId",
-        "zoneReplicaId"
-      ],
+      "required": ["clearedStage", "stageStatus", "totalStage", "zoneId", "zoneReplicaId"],
       "title": "Zone"
     },
     "StageStatus": {
@@ -232,15 +226,7 @@
           "$ref": "#/definitions/ActivityInfoMapType"
         }
       },
-      "required": [
-        "endTime",
-        "id",
-        "isReplicate",
-        "name",
-        "rewardEndTime",
-        "startTime",
-        "type"
-      ],
+      "required": ["endTime", "id", "isReplicate", "name", "rewardEndTime", "startTime", "type"],
       "title": "ActivityInfoMap"
     },
     "AssistChar": {
@@ -454,14 +440,7 @@
           "description": "Operator's current work time (工作时间) in minutes (分钟)."
         }
       },
-      "required": [
-        "ap",
-        "bubble",
-        "charId",
-        "index",
-        "lastApAddTime",
-        "workTime"
-      ],
+      "required": ["ap", "bubble", "charId", "index", "lastApAddTime", "workTime"],
       "title": "ControlChar"
     },
     "Bubble": {
@@ -563,15 +542,7 @@
           "type": "integer"
         }
       },
-      "required": [
-        "chars",
-        "completeWorkTime",
-        "level",
-        "refreshCount",
-        "slotId",
-        "slotState",
-        "state"
-      ],
+      "required": ["chars", "completeWorkTime", "level", "refreshCount", "slotId", "slotState", "state"],
       "title": "Hire"
     },
     "Labor": {
@@ -705,14 +676,7 @@
           "examples": [1554105600]
         }
       },
-      "required": [
-        "chars",
-        "clue",
-        "completeWorkTime",
-        "lastUpdateTime",
-        "level",
-        "slotId"
-      ],
+      "required": ["chars", "clue", "completeWorkTime", "lastUpdateTime", "level", "slotId"],
       "title": "Meeting"
     },
     "Clue": {
@@ -754,15 +718,7 @@
           "examples": [1554105600]
         }
       },
-      "required": [
-        "board",
-        "dailyReward",
-        "needReceive",
-        "own",
-        "received",
-        "shareCompleteTime",
-        "sharing"
-      ],
+      "required": ["board", "dailyReward", "needReceive", "own", "received", "shareCompleteTime", "sharing"],
       "title": "Clue"
     },
     "Trading": {
@@ -811,16 +767,7 @@
           "description": "Trading's stock limit (库存上限)."
         }
       },
-      "required": [
-        "chars",
-        "completeWorkTime",
-        "lastUpdateTime",
-        "level",
-        "slotId",
-        "stock",
-        "stockLimit",
-        "strategy"
-      ],
+      "required": ["chars", "completeWorkTime", "lastUpdateTime", "level", "slotId", "stock", "stockLimit", "strategy"],
       "description": "Trading (贸易站) building.",
       "title": "Trading"
     },
@@ -1034,16 +981,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "displayNumber",
-        "groupId",
-        "id",
-        "name",
-        "nationId",
-        "profession",
-        "rarity",
-        "subProfessionId"
-      ],
+      "required": ["displayNumber", "groupId", "id", "name", "nationId", "profession", "rarity", "subProfessionId"],
       "title": "CharInfoMap"
     },
     "DataChar": {
@@ -1179,14 +1117,7 @@
           "$ref": "#/definitions/TypeName2"
         }
       },
-      "required": [
-        "desc",
-        "id",
-        "name",
-        "shiningColor",
-        "typeIcon",
-        "typeName1"
-      ],
+      "required": ["desc", "id", "name", "shiningColor", "typeIcon", "typeName1"],
       "title": "EquipmentInfoMap"
     },
     "ManufactureFormulaInfoMap": {
@@ -1245,13 +1176,7 @@
           "description": "Total number of medals the user has already acquired."
         }
       },
-      "required": [
-        "customMedalLayout",
-        "template",
-        "templateMedalList",
-        "total",
-        "type"
-      ],
+      "required": ["customMedalLayout", "template", "templateMedalList", "total", "type"],
       "title": "Medal",
       "description": "User's medal (蚀刻章) configuration on their profile page."
     },
@@ -1728,14 +1653,7 @@
           "type": "integer"
         }
       },
-      "required": [
-        "best",
-        "hardBest",
-        "hasHard",
-        "stageNum",
-        "towerId",
-        "unlockHard"
-      ],
+      "required": ["best", "hardBest", "hasHard", "stageNum", "towerId", "unlockHard"],
       "title": "TowerRecord"
     },
     "TowerReward": {
@@ -1816,16 +1734,7 @@
     },
     "Profession": {
       "type": "string",
-      "enum": [
-        "CASTER",
-        "MEDIC",
-        "WARRIOR",
-        "SUPPORT",
-        "SNIPER",
-        "SPECIAL",
-        "PIONEER",
-        "TANK"
-      ],
+      "enum": ["CASTER", "MEDIC", "WARRIOR", "SUPPORT", "SNIPER", "SPECIAL", "PIONEER", "TANK"],
       "title": "Profession"
     },
     "ShiningColor": {
@@ -1840,15 +1749,7 @@
     },
     "DisplayTagID": {
       "type": "string",
-      "enum": [
-        "活动获得",
-        "设定集",
-        "",
-        "联动获得",
-        "特典获得",
-        "赛季服饰",
-        "集成战略"
-      ],
+      "enum": ["活动获得", "设定集", "", "联动获得", "特典获得", "赛季服饰", "集成战略"],
       "title": "DisplayTagID"
     }
   }

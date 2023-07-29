@@ -1,8 +1,4 @@
-import {
-  OpenApiBuilder,
-  OperationObject,
-  ResponsesObject,
-} from 'openapi3-ts/oas31'
+import { OpenApiBuilder, OperationObject, ResponsesObject } from 'openapi3-ts/oas31'
 import packageJson from '../../../package.json'
 import { createDefaultRegistry } from './schema'
 import { SharedParams } from './sharedParams'
@@ -122,9 +118,7 @@ export const renderDocument = async () => {
             description: 'OK',
             content: {
               'application/json': {
-                schema: registry.assertThenRef(
-                  'GetGamePlayerBindingResponseData',
-                ),
+                schema: registry.assertThenRef('GetGamePlayerBindingResponseData'),
               },
             },
           },
@@ -136,10 +130,8 @@ export const renderDocument = async () => {
     .addPath('/api/v1/user/auth/generate_cred_by_code', {
       post: {
         tags: ['auth'],
-        summary:
-          '通过鹰角网络通行证 OAuth2 授权码（Authorization Code）生成森空岛用户的登录凭证',
-        description:
-          '仅有获得内测资格的用户才可以生成登录凭证。如果该用户没有获得内测资格，则会返回 403 Forbidden。',
+        summary: '通过鹰角网络通行证 OAuth2 授权码（Authorization Code）生成森空岛用户的登录凭证',
+        description: '仅有获得内测资格的用户才可以生成登录凭证。如果该用户没有获得内测资格，则会返回 403 Forbidden。',
         operationId: 'GenerateCredByCode',
         requestBody: {
           required: true,
@@ -156,9 +148,7 @@ export const renderDocument = async () => {
             description: '成功',
             content: {
               'application/json': {
-                schema: registry.assertThenRef(
-                  'GenerateCredByCodeResponseData',
-                ),
+                schema: registry.assertThenRef('GenerateCredByCodeResponseData'),
               },
             },
           },

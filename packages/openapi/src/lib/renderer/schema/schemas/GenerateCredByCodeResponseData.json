@@ -5,21 +5,14 @@
     "cred": {
       "type": "string",
       "description": "森空岛用户登录凭证",
-      "examples": [
-        "##REDACTED##"
-      ]
+      "examples": ["##REDACTED##"]
     },
     "userId": {
       "type": "string",
       "description": "森空岛用户 ID",
-      "examples": [
-        "101000"
-      ]
+      "examples": ["101000"]
     }
   },
-  "required": [
-    "cred",
-    "userId"
-  ],
+  "required": ["cred", "userId"],
   "additionalProperties": true
 }

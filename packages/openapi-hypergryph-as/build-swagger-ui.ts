@@ -20,32 +20,14 @@ async function main() {
 
   // Copy each file to the dist directory
   for (const file of files) {
-    if (
-      file.endsWith('.map') ||
-      [
-        'package.json',
-        'NOTICE',
-        'README.md',
-        'LICENSE',
-        'absolute-path.js',
-      ].includes(file)
-    )
+    if (file.endsWith('.map') || ['package.json', 'NOTICE', 'README.md', 'LICENSE', 'absolute-path.js'].includes(file))
       continue
-    await fs.copyFile(
-      path.join(swaggerUi.absolutePath(), file),
-      `./dist/${file}`,
-    )
+    await fs.copyFile(path.join(swaggerUi.absolutePath(), file), `./dist/${file}`)
   }
 
   // Update index.html to load our openapi.json
-  let swaggerInitializer = await fs.readFile(
-    './dist/swagger-initializer.js',
-    'utf8',
-  )
-  swaggerInitializer = swaggerInitializer.replace(
-    'https://petstore.swagger.io/v2/swagger.json',
-    './openapi.json',
-  )
+  let swaggerInitializer = await fs.readFile('./dist/swagger-initializer.js', 'utf8')
+  swaggerInitializer = swaggerInitializer.replace('https://petstore.swagger.io/v2/swagger.json', './openapi.json')
   await fs.writeFile('./dist/swagger-initializer.js', swaggerInitializer)
 }
 

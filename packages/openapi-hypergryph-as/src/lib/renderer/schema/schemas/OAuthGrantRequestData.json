@@ -18,10 +18,6 @@
       "description": "（未知）疑似登录类型"
     }
   },
-  "required": [
-    "appCode",
-    "token",
-    "type"
-  ],
+  "required": ["appCode", "token", "type"],
   "additionalProperties": true
 }

@@ -14,9 +14,6 @@
       ]
     }
   },
-  "required": [
-    "kind",
-    "code"
-  ],
+  "required": ["kind", "code"],
   "additionalProperties": true
 }

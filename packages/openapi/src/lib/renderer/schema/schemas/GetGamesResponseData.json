@@ -243,16 +243,7 @@
           "type": "integer"
         }
       },
-      "required": [
-        "cover",
-        "createdAtTs",
-        "description",
-        "id",
-        "name",
-        "publishAtTs",
-        "status",
-        "updatedAtTs"
-      ],
+      "required": ["cover", "createdAtTs", "description", "id", "name", "publishAtTs", "status", "updatedAtTs"],
       "title": "Tag"
     },
     "Format": {
