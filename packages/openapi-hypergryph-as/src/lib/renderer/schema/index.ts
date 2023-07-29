@@ -9,10 +9,7 @@ import {
   SendPhoneCodeResponseData,
   SendPhoneCodeCaptchaResponseData,
 } from './schemas/SendPhoneCodeData'
-import {
-  GetTokenByPhoneCodeRequestData,
-  GetTokenByPhoneCodeResponseData,
-} from './schemas/GetTokenByPhoneCodeData'
+import { GetTokenByPhoneCodeRequestData, GetTokenByPhoneCodeResponseData } from './schemas/GetTokenByPhoneCodeData'
 
 export const createDefaultRegistry = async () => {
   const registry = new SchemaRegistry()

@@ -4,7 +4,8 @@
 
 ## 行为准则
 
-本项目及其中的所有 Contributor 都受到 [SklandPlus 行为准则](./CODE_OF_CONDUCT.md) 的约束。通过参与，您有责任维护这一准则。请将不可接受的行为报告给 [report@skland.plus](mailto:report@skland.plus)。
+本项目及其中的所有 Contributor 都受到 [SklandPlus 行为准则](./CODE_OF_CONDUCT.md) 的约束。通过参与，您有责任维护这一准则
+。请将不可接受的行为报告给 [report@skland.plus](mailto:report@skland.plus)。
 
 ## 如何贡献
 
@@ -14,11 +15,13 @@
 
 ### Pull Request
 
-我们同样欢迎您提交 Pull Request。在开启新的 Pull Request 时，请遵循 Pull Request 模板（如适用），并也尽可能提供尽可能多的信息。
+我们同样欢迎您提交 Pull Request。在开启新的 Pull Request 时，请遵循 Pull Request 模板（如适用），并也尽可能提供尽可能多
+的信息。
 
 ### 提交信息
 
-提交信息时，请遵循 [Conventional Commits](https://www.conventionalcommits.org/zh/v1.0.0/) 的规范。虽然目前暂未强制执行，但我们强烈推荐这么做。
+提交信息时，请遵循 [Conventional Commits](https://www.conventionalcommits.org/zh/v1.0.0/) 的规范。虽然目前暂未强制执行，
+但我们强烈推荐这么做。
 
 ### 代码风格
 

@@ -14,9 +14,7 @@ export const SendPhoneCodeRequestData = {
     },
     captcha: {
       type: 'object',
-      description:
-        '若上一次该操作的响应要求输入验证码，' +
-        '则该次操作的请求需要携带这些验证后的验证码参数。',
+      description: '若上一次该操作的响应要求输入验证码，' + '则该次操作的请求需要携带这些验证后的验证码参数。',
       required: ['geetest_challenge', 'geetest_validate', 'geetest_seccode'],
       properties: {
         geetest_challenge: {

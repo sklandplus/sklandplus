@@ -2,7 +2,8 @@
 
 ## 我们的承诺
 
-身为社区成员、贡献者和领袖，我们承诺使社区参与者不受骚扰，无论其年龄、体型、可见或不可见的缺陷、族裔、性征、性别认同和表达、经验水平、教育程度、社会与经济地位、国籍、相貌、种族、种姓、肤色、宗教信仰、性倾向或性取向如何。
+身为社区成员、贡献者和领袖，我们承诺使社区参与者不受骚扰，无论其年龄、体型、可见或不可见的缺陷、族裔、性征、性别认同和表
+达、经验水平、教育程度、社会与经济地位、国籍、相貌、种族、种姓、肤色、宗教信仰、性倾向或性取向如何。
 
 我们承诺以有助于建立开放、友善、多样化、包容、健康社区的方式行事和互动。
 
@@ -28,7 +29,8 @@
 
 社区领袖有责任解释和落实我们所认可的行为准则，并妥善公正地对他们认为不当、威胁、冒犯或有害的任何行为采取纠正措施。
 
-社区领导有权力和责任删除、编辑或拒绝或拒绝与本行为准则不相符的评论（comment）、提交（commits）、代码、维基（wiki）编辑、议题（issues）或其他贡献，并在适当时机知采取措施的理由。
+社区领导有权力和责任删除、编辑或拒绝或拒绝与本行为准则不相符的评论（comment）、提交（commits）、代码、维基（wiki）编辑、
+议题（issues）或其他贡献，并在适当时机知采取措施的理由。
 
 ## 适用范围
 
@@ -38,8 +40,8 @@
 
 ## 监督
 
-辱骂、骚扰或其他不可接受的行为可通过 [report@skland.plus](mailto:report@skland.plus) 向负责监督的社区领袖报告。
-所有投诉都将得到及时和公平的审查和调查。
+辱骂、骚扰或其他不可接受的行为可通过 [report@skland.plus](mailto:report@skland.plus) 向负责监督的社区领袖报告。所有投诉
+都将得到及时和公平的审查和调查。
 
 所有社区领袖都有义务尊重任何事件报告者的隐私和安全。
 
@@ -57,13 +59,15 @@
 
 **社区影响**：单个或一系列违规行为。
 
-**处理意见**：警告并对连续性行为进行处理。在指定时间内，不得与相关人员互动，包括主动与行为准则执行者互动。这包括避免在社区场所和外部渠道中的互动。违反这些条款可能会导致临时或永久封禁。
+**处理意见**：警告并对连续性行为进行处理。在指定时间内，不得与相关人员互动，包括主动与行为准则执行者互动。这包括避免在社
+区场所和外部渠道中的互动。违反这些条款可能会导致临时或永久封禁。
 
 ### 3. 临时封禁
 
 **社区影响**: 严重违反社区准则，包括持续的不当行为。
 
-**处理意见**: 在指定时间内，暂时禁止与社区进行任何形式的互动或公开交流。在此期间，不得与相关人员进行公开或私下互动，包括主动与行为准则执行者互动。违反这些条款可能会导致永久封禁。
+**处理意见**: 在指定时间内，暂时禁止与社区进行任何形式的互动或公开交流。在此期间，不得与相关人员进行公开或私下互动，包括
+主动与行为准则执行者互动。违反这些条款可能会导致永久封禁。
 
 ### 4. 永久封禁
 
@@ -73,12 +77,13 @@
 
 ## 参见
 
-本行为准则改编自 [Contributor Covenant][homepage] 2.1 版, 参见 [https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1]。
+本行为准则改编自 [Contributor Covenant][homepage] 2.1 版, 参见
+[https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1]。
 
 社区处理方针灵感来源于 [Mozilla's code of conduct enforcement ladder][Mozilla CoC]。
 
-有关本行为准则的常见问题的答案，参见 [https://www.contributor-covenant.org/faq][FAQ]。
-其他语言翻译参见 [https://www.contributor-covenant.org/translations][translations]。
+有关本行为准则的常见问题的答案，参见 [https://www.contributor-covenant.org/faq][FAQ]。其他语言翻译参见
+[https://www.contributor-covenant.org/translations][translations]。
 
 [homepage]: https://www.contributor-covenant.org
 [v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html

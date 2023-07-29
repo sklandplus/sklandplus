@@ -30,9 +30,7 @@ export class SchemaRegistry {
     },
   ): SchemaObject | ReferenceObject {
     if (!(name in this.registry)) {
-      throw new Error(
-        `ensuredRef: assertion failed: Schema "${name}" not found`,
-      )
+      throw new Error(`ensuredRef: assertion failed: Schema "${name}" not found`)
     }
     if (!options.wrapped) {
       return { $ref: `#/components/schemas/${name}` }

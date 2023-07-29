@@ -22,18 +22,14 @@ export const renderDocument = async () => {
     .addPath('/user/auth/v1/token_by_phone_password', {
       post: {
         tags: ['auth'],
-        summary:
-          '通过鹰角网络通行证绑定的手机号码和密码获取鹰角网络通行证 token',
+        summary: '通过鹰角网络通行证绑定的手机号码和密码获取鹰角网络通行证 token',
         description: '注：即便账号或密码错误，该接口也会返回 200 OK。',
         operationId: 'GetTokenByPhonePassword',
         requestBody: {
           required: true,
           content: {
             'application/json': {
-              schema: registry.assertThenRef(
-                'GetTokenByPhonePasswordRequestData',
-                { wrapped: false },
-              ),
+              schema: registry.assertThenRef('GetTokenByPhonePasswordRequestData', { wrapped: false }),
             },
           },
         },
@@ -42,9 +38,7 @@ export const renderDocument = async () => {
             description: '成功、账号错误或密码错误',
             content: {
               'application/json': {
-                schema: registry.assertThenRef(
-                  'GetTokenByPhonePasswordResponseData',
-                ),
+                schema: registry.assertThenRef('GetTokenByPhonePasswordResponseData'),
               },
             },
           },
@@ -54,8 +48,7 @@ export const renderDocument = async () => {
     .addPath('/user/oauth2/v2/grant', {
       post: {
         tags: ['auth'],
-        summary:
-          '通过鹰角网络通行证 token 获取鹰角网络通行证 OAuth2 授权码（Authorization Code）',
+        summary: '通过鹰角网络通行证 token 获取鹰角网络通行证 OAuth2 授权码（Authorization Code）',
         description: '部分请求字段的作用暂时未知，但不影响一般的使用。',
         operationId: 'OAuthGrant',
         requestBody: {
@@ -141,8 +134,7 @@ export const renderDocument = async () => {
     .addPath('/user/auth/v1/token_by_phone_code', {
       post: {
         tags: ['auth'],
-        summary:
-          '通过鹰角网络通行证绑定的手机号码和登录验证码获取鹰角网络通行证 token',
+        summary: '通过鹰角网络通行证绑定的手机号码和登录验证码获取鹰角网络通行证 token',
         description: '注：即便账号或密码错误，该接口也会返回 200 OK。',
         operationId: 'GetTokenByPhoneCode',
         requestBody: {
@@ -160,9 +152,7 @@ export const renderDocument = async () => {
             description: '成功、账号错误或验证码错误',
             content: {
               'application/json': {
-                schema: registry.assertThenRef(
-                  'GetTokenByPhoneCodeResponseData',
-                ),
+                schema: registry.assertThenRef('GetTokenByPhoneCodeResponseData'),
               },
             },
           },

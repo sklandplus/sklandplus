@@ -23,15 +23,10 @@ type AuthorizeResult =
         | any
     }
 
-export async function authorize(
-  credential: PhonePasswordCredential,
-): Promise<AuthorizeResult> {
-  const tokenResp = await clientHa.post(
-    '/user/auth/v1/token_by_phone_password',
-    {
-      body: credential,
-    },
-  )
+export async function authorize(credential: PhonePasswordCredential): Promise<AuthorizeResult> {
+  const tokenResp = await clientHa.post('/user/auth/v1/token_by_phone_password', {
+    body: credential,
+  })
   // 注：即便账号或密码错误，该接口也会返回 200 OK。
   if (tokenResp.data && !tokenResp.data.data) {
     return { data: undefined, error: tokenResp.data }

@@ -12,14 +12,9 @@
     "uid": {
       "type": "string",
       "description": "鹰角网络通行证的 ID。",
-      "examples": [
-        "1234567891234"
-      ]
+      "examples": ["1234567891234"]
     }
   },
-  "required": [
-    "code",
-    "uid"
-  ],
+  "required": ["code", "uid"],
   "additionalProperties": true
 }
