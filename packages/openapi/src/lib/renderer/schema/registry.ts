@@ -1,24 +1,9 @@
-import refParser from '@apidevtools/json-schema-ref-parser'
-
-// @ts-ignore
-import toOpenApi from 'json-schema-to-openapi-schema'
+import convert from '@openapi-contrib/json-schema-to-openapi-schema'
 import { OpenApiBuilder } from 'openapi3-ts/oas31'
 import { ReferenceObject, SchemaObject } from 'openapi3-ts/src/model/openapi31'
 
 export type SchemaRegistryItems = {
   [name: string]: any
-}
-
-const openapiSchemaFromJsonSchema = async (schema: any) => {
-  const parser = new refParser()
-  const parsedSchema = await parser.dereference(schema)
-  const converted = toOpenApi(parsedSchema, {
-    dereference: {
-      circular: false,
-    },
-  })
-  delete converted.definitions
-  return converted
 }
 
 export class SchemaRegistry {
@@ -30,7 +15,7 @@ export class SchemaRegistry {
 
   async register(schemas: SchemaRegistryItems) {
     for (const [name, schema] of Object.entries(schemas)) {
-      this.registry[name] = await openapiSchemaFromJsonSchema(schema)
+      this.registry[name] = await convert(schema, { dereference: true })
     }
   }
 
