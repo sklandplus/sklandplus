@@ -1,6 +1,7 @@
 import { OpenApiBuilder } from 'openapi3-ts/oas31'
 import { createDefaultRegistry } from './schema'
 import packageJson from '../../../package.json'
+import { GetTokenByPhoneCodeRequestData } from './schema/schemas/GetTokenByPhoneCodeData'
 
 export const renderDocument = async () => {
   const registry = await createDefaultRegistry()
@@ -131,6 +132,37 @@ export const renderDocument = async () => {
                     registry.assertThenRef('SendPhoneCodeCaptchaResponseData'),
                   ],
                 },
+              },
+            },
+          },
+        },
+      },
+    })
+    .addPath('/user/auth/v1/token_by_phone_code', {
+      post: {
+        tags: ['auth'],
+        summary:
+          '通过鹰角网络通行证绑定的手机号码和登录验证码获取鹰角网络通行证 token',
+        description: '注：即便账号或密码错误，该接口也会返回 200 OK。',
+        operationId: 'GetTokenByPhoneCode',
+        requestBody: {
+          required: true,
+          content: {
+            'application/json': {
+              schema: registry.assertThenRef('GetTokenByPhoneCodeRequestData', {
+                wrapped: false,
+              }),
+            },
+          },
+        },
+        responses: {
+          200: {
+            description: '成功、账号错误或验证码错误',
+            content: {
+              'application/json': {
+                schema: registry.assertThenRef(
+                  'GetTokenByPhoneCodeResponseData',
+                ),
               },
             },
           },
