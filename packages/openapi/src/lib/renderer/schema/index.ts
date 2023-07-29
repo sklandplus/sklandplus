@@ -9,24 +9,17 @@ import GenerateCredByCodeResponseData from './schemas/GenerateCredByCodeResponse
 
 export const createDefaultRegistry = async () => {
   const registry = new SchemaRegistry()
-  await registry.add(
-    'GetGamePlayerInfoResponseData',
-    GetGamePlayerInfoResponseData,
-  )
-  await registry.add(
-    'GetGamePlayerBindingResponseData',
-    GetGamePlayerBindingResponseData,
-  )
-  await registry.add('GetGamesResponseData', GetGamesResponseData)
 
-  await registry.add(
-    'GenerateCredByCodeRequestData',
+  await registry.register({
+    GetGamePlayerInfoResponseData,
+    GetGamePlayerBindingResponseData,
+    GetGamesResponseData,
+  })
+
+  await registry.register({
     GenerateCredByCodeRequestData,
-  )
-  await registry.add(
-    'GenerateCredByCodeResponseData',
     GenerateCredByCodeResponseData,
-  )
+  })
 
   return registry
 }

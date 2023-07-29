@@ -10,6 +10,10 @@ export interface SchemaRegistryItem {
   schema: any
 }
 
+export type SchemaRegistryItems = {
+  [name: string]: any
+}
+
 const openapiSchemaFromJsonSchema = async (schema: any) => {
   const parser = new refParser()
   const parsedSchema = await parser.dereference(schema)
@@ -30,6 +34,12 @@ export class SchemaRegistry {
       name,
       schema: await openapiSchemaFromJsonSchema(schema),
     })
+  }
+
+  async register(schemas: SchemaRegistryItems) {
+    for (let [name, schema] of Object.entries(schemas)) {
+      await this.add(name, schema)
+    }
   }
 
   assertThenRef(name: string, options?: { wrapped?: true }): SchemaObject
