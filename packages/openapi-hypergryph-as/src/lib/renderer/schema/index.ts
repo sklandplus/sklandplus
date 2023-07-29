@@ -4,6 +4,15 @@ import GetTokenByPhonePasswordRequestData from './schemas/GetTokenByPhonePasswor
 import GetTokenByPhonePasswordResponseData from './schemas/GetTokenByPhonePasswordResponseData.json'
 import OAuthGrantRequestData from './schemas/OAuthGrantRequestData.json'
 import OAuthGrantResponseData from './schemas/OAuthGrantResponseData.json'
+import {
+  SendPhoneCodeRequestData,
+  SendPhoneCodeResponseData,
+  SendPhoneCodeCaptchaResponseData,
+} from './schemas/SendPhoneCodeData'
+import {
+  GetTokenByPhoneCodeRequestData,
+  GetTokenByPhoneCodeResponseData,
+} from './schemas/GetTokenByPhoneCodeData'
 
 export const createDefaultRegistry = async () => {
   const registry = new SchemaRegistry()
@@ -13,6 +22,11 @@ export const createDefaultRegistry = async () => {
     GetTokenByPhonePasswordResponseData,
     OAuthGrantRequestData,
     OAuthGrantResponseData,
+    SendPhoneCodeRequestData,
+    SendPhoneCodeResponseData,
+    SendPhoneCodeCaptchaResponseData,
+    GetTokenByPhoneCodeRequestData,
+    GetTokenByPhoneCodeResponseData,
   })
 
   return registry
