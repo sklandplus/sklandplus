@@ -5,11 +5,6 @@ import toOpenApi from 'json-schema-to-openapi-schema'
 import { OpenApiBuilder } from 'openapi3-ts/oas31'
 import { ReferenceObject, SchemaObject } from 'openapi3-ts/src/model/openapi31'
 
-export interface SchemaRegistryItem {
-  name: string
-  schema: any
-}
-
 export type SchemaRegistryItems = {
   [name: string]: any
 }
@@ -27,18 +22,15 @@ const openapiSchemaFromJsonSchema = async (schema: any) => {
 }
 
 export class SchemaRegistry {
-  private registry: SchemaRegistryItem[] = []
+  private registry: SchemaRegistryItems = {}
 
   async add(name: string, schema: any) {
-    this.registry.push({
-      name,
-      schema: await openapiSchemaFromJsonSchema(schema),
-    })
+    await this.register({ name: schema })
   }
 
   async register(schemas: SchemaRegistryItems) {
-    for (let [name, schema] of Object.entries(schemas)) {
-      await this.add(name, schema)
+    for (const [name, schema] of Object.entries(schemas)) {
+      this.registry[name] = await openapiSchemaFromJsonSchema(schema)
     }
   }
 
@@ -52,8 +44,7 @@ export class SchemaRegistry {
       wrapped: true,
     },
   ): SchemaObject | ReferenceObject {
-    const found = this.registry.find((item) => item.name === name)
-    if (!found) {
+    if (!(name in this.registry)) {
       throw new Error(
         `ensuredRef: assertion failed: Schema "${name}" not found`,
       )
@@ -85,7 +76,7 @@ export class SchemaRegistry {
   }
 
   addToBuilder(builder: OpenApiBuilder) {
-    this.registry.forEach(({ name, schema }) => {
+    Object.entries(this.registry).forEach(([name, schema]) => {
       builder.addSchema(name, schema)
     })
   }
