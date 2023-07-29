@@ -102,6 +102,41 @@ export const renderDocument = async () => {
         },
       },
     })
+    .addPath('/general/v1/send_phone_code', {
+      post: {
+        tags: ['auth'],
+        summary: '对指定的鹰角网络通行证绑定的手机号码发送登录验证码',
+        description:
+          '若要求输入验证码，则响应中会带有极验验证码的参数。验证后需重新携带验证后的参数进行操作。' +
+          '具体验证方式请参考：https://docs.geetest.com/sensebot/deploy/client/web。',
+        operationId: 'SendPhoneCode',
+        requestBody: {
+          required: true,
+          content: {
+            'application/json': {
+              schema: registry.assertThenRef('SendPhoneCodeRequestData', {
+                wrapped: false,
+              }),
+            },
+          },
+        },
+        responses: {
+          '200': {
+            description: '成功',
+            content: {
+              'application/json': {
+                schema: {
+                  anyOf: [
+                    registry.assertThenRef('SendPhoneCodeResponseData'),
+                    registry.assertThenRef('SendPhoneCodeCaptchaResponseData'),
+                  ],
+                },
+              },
+            },
+          },
+        },
+      },
+    })
 
   registry.addToBuilder(builder)
 
