@@ -23,9 +23,10 @@
   "scripts": {
     "lint": "eslint \"**/*.ts*\"",
     "clean": "rimraf build",
-    "build": "run-s clean build:generate* build:tsc build:copyfiles:*",
+    "build": "run-s clean build:generate* format:generated build:tsc build:copyfiles:*",
     "build:generate": "openapi-typescript ../openapi/build-intermediate/schema.yaml -o ./src/lib/api/v0.d.ts",
     "build:generate-hypergryph-as": "openapi-typescript ../openapi-hypergryph-as/build-intermediate/schema.yaml -o ./src/lib/api-hypergryph-as/v0.d.ts",
+    "format:generated": "prettier --write ./src/lib/api*/**",
     "build:tsc": "run-p build:tsc:*",
     "build:tsc:main": "tsc -p tsconfig.json",
     "build:tsc:module": "tsc -p tsconfig.module.json",
