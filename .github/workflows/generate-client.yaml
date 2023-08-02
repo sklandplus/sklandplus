@@ -27,6 +27,9 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+        
+      - name: Install Turbo
+        run: yarn global add turbo
 
       - name: Build Client
         run: turbo build --filter client
