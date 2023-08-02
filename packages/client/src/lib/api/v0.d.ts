@@ -1277,7 +1277,7 @@ export interface components {
     GenerateCredByCodeRequestData: {
       /**
        * @description （未知）疑似登录类型
-       * @enum {unknown}
+       * @enum {number}
        */
       kind: 1
       /**

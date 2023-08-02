@@ -18,6 +18,20 @@ export interface paths {
      */
     post: operations['OAuthGrant']
   }
+  '/general/v1/send_phone_code': {
+    /**
+     * 对指定的鹰角网络通行证绑定的手机号码发送登录验证码
+     * @description 若要求输入验证码，则响应中会带有极验验证码的参数。验证后需重新携带验证后的参数进行操作。具体验证方式请参考：https://docs.geetest.com/sensebot/deploy/client/web。
+     */
+    post: operations['SendPhoneCode']
+  }
+  '/user/auth/v1/token_by_phone_code': {
+    /**
+     * 通过鹰角网络通行证绑定的手机号码和登录验证码获取鹰角网络通行证 token
+     * @description 注：即便账号或密码错误，该接口也会返回 200 OK。
+     */
+    post: operations['GetTokenByPhoneCode']
+  }
 }
 
 export type webhooks = Record<string, never>
@@ -53,12 +67,12 @@ export interface components {
       token: string
       /**
        * @description （未知）疑似应用代码
-       * @enum {unknown}
+       * @enum {string}
        */
       appCode: '4ca99fa6b56cc2ba'
       /**
        * @description （未知）疑似登录类型
-       * @constant
+       * @enum {number}
        */
       type: 0
       [key: string]: unknown
@@ -75,6 +89,61 @@ export interface components {
        */
       uid: string
       [key: string]: unknown
+    }
+    SendPhoneCodeRequestData: {
+      /**
+       * @description 鹰角网络通行证绑定的手机号码
+       * @example 13012345678
+       */
+      phone: string
+      /**
+       * @description （未知）
+       * @enum {unknown}
+       */
+      type: 1
+      /** @description 若上一次该操作的响应要求输入验证码，则该次操作的请求需要携带这些验证后的验证码参数。 */
+      captcha?: {
+        /** @example 29e68c3a6b3be4c4ad4743ef53fc0d6beb */
+        geetest_challenge: string
+        /** @example 4474c7fb489d6907bc56bb4b72729b5f */
+        geetest_validate: string
+        /** @example 4474c7fb489d5907bc56bb4b72720b5f|jordan */
+        geetest_seccode: string
+      }
+    }
+    /** @description 若操作成功则返回空对象。 */
+    SendPhoneCodeResponseData: Record<string, never>
+    /** @description 若操作要求输入验证码，则返回极验验证码参数。验证方法可参考：https://docs.geetest.com/sensebot/deploy/client/web。验证完毕后，需要重新操作，并在请求中携带验证后的验证码参数。 */
+    SendPhoneCodeCaptchaResponseData: {
+      captcha: {
+        /** @example 1 */
+        success: number
+        /** @example 82247ab6116801d31b4ae6c3c227672f */
+        challenge: string
+        /** @example 83594bc21b4cdbfd7b3ce45226698113 */
+        gt: string
+        /** @example true */
+        new_captcha: boolean
+      }
+    }
+    GetTokenByPhoneCodeRequestData: {
+      /**
+       * @description 鹰角网络通行证绑定的手机号码
+       * @example 13012345678
+       */
+      phone: string
+      /**
+       * @description 登录验证码
+       * @example 393939
+       */
+      code: string
+    }
+    GetTokenByPhoneCodeResponseData: {
+      /**
+       * @description 鹰角网络通行证 token。注：提供的例子已经过脱敏处理
+       * @example w2g/hGowTggldJREt333UyIM
+       */
+      token: string
     }
   }
   responses: {}
@@ -161,6 +230,82 @@ export interface operations {
              * @example 登录已过期，请重新登录
              */
             message: string
+          }
+        }
+      }
+    }
+  }
+  /**
+   * 对指定的鹰角网络通行证绑定的手机号码发送登录验证码
+   * @description 若要求输入验证码，则响应中会带有极验验证码的参数。验证后需重新携带验证后的参数进行操作。具体验证方式请参考：https://docs.geetest.com/sensebot/deploy/client/web。
+   */
+  SendPhoneCode: {
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['SendPhoneCodeRequestData']
+      }
+    }
+    responses: {
+      /** @description 成功 */
+      200: {
+        content: {
+          'application/json':
+            | {
+                /**
+                 * @description Business-level response code
+                 * @example 0
+                 */
+                code: number
+                /**
+                 * @description Business-level response message
+                 * @example OK
+                 */
+                message: string
+                data: components['schemas']['SendPhoneCodeResponseData']
+              }
+            | {
+                /**
+                 * @description Business-level response code
+                 * @example 0
+                 */
+                code: number
+                /**
+                 * @description Business-level response message
+                 * @example OK
+                 */
+                message: string
+                data: components['schemas']['SendPhoneCodeCaptchaResponseData']
+              }
+        }
+      }
+    }
+  }
+  /**
+   * 通过鹰角网络通行证绑定的手机号码和登录验证码获取鹰角网络通行证 token
+   * @description 注：即便账号或密码错误，该接口也会返回 200 OK。
+   */
+  GetTokenByPhoneCode: {
+    requestBody: {
+      content: {
+        'application/json': components['schemas']['GetTokenByPhoneCodeRequestData']
+      }
+    }
+    responses: {
+      /** @description 成功、账号错误或验证码错误 */
+      200: {
+        content: {
+          'application/json': {
+            /**
+             * @description Business-level response code
+             * @example 0
+             */
+            code: number
+            /**
+             * @description Business-level response message
+             * @example OK
+             */
+            message: string
+            data: components['schemas']['GetTokenByPhoneCodeResponseData']
           }
         }
       }
