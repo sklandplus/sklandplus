@@ -10,10 +10,12 @@
       ]
     },
     "appCode": {
+      "type": "string",
       "const": "4ca99fa6b56cc2ba",
       "description": "（未知）疑似应用代码"
     },
     "type": {
+      "type": "number",
       "const": 0,
       "description": "（未知）疑似登录类型"
     }

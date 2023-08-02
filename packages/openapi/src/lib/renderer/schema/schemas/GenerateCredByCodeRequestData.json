@@ -3,6 +3,7 @@
   "type": "object",
   "properties": {
     "kind": {
+      "type": "number",
       "const": 1,
       "description": "（未知）疑似登录类型"
     },
