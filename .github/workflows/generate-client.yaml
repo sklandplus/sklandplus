@@ -37,5 +37,5 @@ jobs:
       - name: Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "chore: generate client package from openapi packages"
+          commit_message: "chore(client): auto generate client from openapi"
           file_pattern: 'packages/client/src/**'
