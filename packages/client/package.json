@@ -32,18 +32,22 @@
     "build:tsc:module": "tsc -p tsconfig.module.json",
     "build:copyfiles:main": "copyfiles -u 1 \"src/**/*.d.ts\" build/main",
     "build:copyfiles:module": "copyfiles -u 1 \"src/**/*.d.ts\" build/module",
-    "watch:build": "tsc -p tsconfig.json -w"
+    "watch:build": "tsc -p tsconfig.json -w",
+    "test": "jest"
   },
   "devDependencies": {
+    "@jest/globals": "^29.6.2",
     "@sklandplus/openapi": "*",
     "@sklandplus/openapi-hypergryph-as": "*",
     "copyfiles": "^2.4.1",
     "eslint": "^7.32.0",
     "eslint-config-custom": "*",
+    "jest": "^29.6.2",
     "npm-run-all": "^4.1.5",
     "openapi-typescript": "^6.3.7",
     "rimraf": "^5.0.1",
     "terser": "^5.19.2",
+    "ts-jest": "^29.1.1",
     "tsconfig": "*",
     "typescript": "^4.5.2"
   },
