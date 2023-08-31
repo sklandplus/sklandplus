@@ -19,6 +19,10 @@ export interface paths {
      */
     get: operations['GetGamePlayerBinding']
   }
+  '/api/v1/game/attendance': {
+    /** Post Attendance (签到) Record */
+    post: operations['PostGameAttendance']
+  }
   '/api/v1/user/auth/generate_cred_by_code': {
     /**
      * 通过鹰角网络通行证 OAuth2 授权码（Authorization Code）生成森空岛用户的登录凭证
@@ -1162,6 +1166,7 @@ export interface components {
         bindingList: {
           /**
            * Format: integer
+           * @description The unique identifier for a user in a game.
            * @example 10000001
            */
           uid: string
@@ -1273,6 +1278,16 @@ export interface components {
           updatedAtTs: number
         }
       }[]
+    }
+    /** Item */
+    PostGameAttendanceRequestData: {
+      /**
+       * Format: integer
+       * @description The unique identifier for a user in a game. This value is retrievable via the GetGamePlayerBinding operation.
+       */
+      uid: string
+      /** @description The unique identifier for a game. This value is retrievable via the GetGames operation. */
+      gameId: number
     }
     GenerateCredByCodeRequestData: {
       /**
@@ -1407,6 +1422,46 @@ export interface operations {
           }
         }
       }
+      /** @description Unauthorized */
+      401: {
+        content: {
+          'application/json': {
+            /**
+             * @description Error code
+             * @example 10001
+             */
+            code: number
+            /**
+             * @description Error message
+             * @example 用户未登录
+             */
+            message: string
+          }
+        }
+      }
+    }
+  }
+  /** Post Attendance (签到) Record */
+  PostGameAttendance: {
+    /** @description Attendance record */
+    requestBody?: {
+      content: {
+        'application/json': {
+          /**
+           * @description Business-level response code
+           * @example 0
+           */
+          code: number
+          /**
+           * @description Business-level response message
+           * @example OK
+           */
+          message: string
+          data: components['schemas']['PostGameAttendanceRequestData']
+        }
+      }
+    }
+    responses: {
       /** @description Unauthorized */
       401: {
         content: {
