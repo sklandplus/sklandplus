@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "uid": {
+      "type": "string",
+      "format": "integer",
+      "description": "The unique identifier for a user in a game. This value is retrievable via the GetGamePlayerBinding operation."
+    },
+    "gameId": {
+      "type": "integer",
+      "description": "The unique identifier for a game. This value is retrievable via the GetGames operation."
+    }
+  },
+  "required": ["gameId", "uid"],
+  "title": "Item"
+}

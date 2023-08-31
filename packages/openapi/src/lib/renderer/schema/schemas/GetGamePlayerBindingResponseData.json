@@ -38,6 +38,7 @@
         "uid": {
           "type": "string",
           "format": "integer",
+          "description": "The unique identifier for a user in a game.",
           "examples": ["10000001"]
         },
         "isOfficial": {

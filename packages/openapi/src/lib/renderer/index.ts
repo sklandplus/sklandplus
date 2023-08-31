@@ -126,6 +126,25 @@ export const renderDocument = async () => {
         },
       },
     })
+    .addPath('/api/v1/game/attendance', {
+      post: {
+        ...SharedOperationMixin.authenticated(),
+        tags: ['game'],
+        summary: 'Post Attendance (签到) Record',
+        operationId: 'PostGameAttendance',
+        requestBody: {
+          description: 'Attendance record',
+          content: {
+            'application/json': {
+              schema: registry.assertThenRef('PostGameAttendanceRequestData'),
+            },
+          },
+        },
+        responses: {
+          ...SharedResponseMixin,
+        },
+      },
+    })
     .addTag({ name: 'auth', description: 'Authorization Operations' })
     .addPath('/api/v1/user/auth/generate_cred_by_code', {
       post: {
