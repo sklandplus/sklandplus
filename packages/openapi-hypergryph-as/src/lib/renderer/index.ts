@@ -1,7 +1,6 @@
 import { OpenApiBuilder } from 'openapi3-ts/oas31'
 import { createDefaultRegistry } from './schema'
 import packageJson from '../../../package.json'
-import { GetTokenByPhoneCodeRequestData } from './schema/schemas/GetTokenByPhoneCodeData'
 
 export const renderDocument = async () => {
   const registry = await createDefaultRegistry()
