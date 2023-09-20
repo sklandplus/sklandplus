@@ -20,7 +20,7 @@
 
 ### 提交信息
 
-提交信息时，请遵循 [Conventional Commits](https://www.conventionalcommits.org/zh/v1.0.0/) 的规范。虽然目前暂未强制执行，
+提交信息时，请遵循 [Conventional Commits](https://www.conventionalcommits.org/zh-hans/v1.0.0/) 的规范。虽然目前暂未强制执行，
 但我们强烈推荐这么做。
 
 ### 代码风格
